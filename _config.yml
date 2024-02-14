@@ -105,8 +105,8 @@ analytics:
 author:
   name: "Henry Chung"
   avatar: # path of avatar image, e.g. "/assets/images/bio-photo.jpg"
-  bio: "I am an **amazing** person."
-  location: "Somewhere"
+  bio: "Henry's blog"
+  location: "Canada"
   email:
   links:
     - label: "Email"
