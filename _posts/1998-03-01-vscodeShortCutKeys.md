@@ -7,7 +7,7 @@ author_profile: false
 search: true
 ---
 
-[Minimal-Mistakes Quick Start Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+[Quick Start Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
 
 | Keys                        | Windows                 | Mac                        |
 | --------------------------- | ----------------------- | -------------------------- |
