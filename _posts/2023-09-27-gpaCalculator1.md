@@ -8,7 +8,7 @@ search: true
 use_math: true
 ---
 
-### Introduction
+### introduction
 
 GPA stands for 'Grade Point Average', a number that indicates how high you scored in your courses on average.
 For example, assume the highest grade is A+(4.33), and if you have taken 3 courses with A(4.0), B(3.0), A+(4.33), then your current GPA is

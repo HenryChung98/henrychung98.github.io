@@ -7,7 +7,7 @@ author_profile: false
 search: true
 ---
 
-### Introduction
+### introduction
 
 turtle is pre-installed Python library that enables users to create pictures with a virtual canvas.
 For the programmer who needs to produce some graphical output it can be a way to do that.

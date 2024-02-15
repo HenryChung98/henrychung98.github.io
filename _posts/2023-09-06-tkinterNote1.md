@@ -7,7 +7,7 @@ author_profile: false
 search: true
 ---
 
-### Introduction
+### introduction
 
 tkinter is a Python library that can be used to construct basic graphical user interface (GUI) applications.
 
