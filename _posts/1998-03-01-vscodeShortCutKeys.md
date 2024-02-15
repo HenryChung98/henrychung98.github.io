@@ -7,6 +7,8 @@ author_profile: false
 search: true
 ---
 
+[Minimal-Mistakes Quick Start Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
+
 | Keys                        | Windows                 | Mac                        |
 | --------------------------- | ----------------------- | -------------------------- |
 | **global search**           | shift + ctrl + F        | shift + cmd + F            |
