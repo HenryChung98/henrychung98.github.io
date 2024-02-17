@@ -2,7 +2,7 @@
 layout: single
 title: "QR Code Generator"
 categories: project
-tags: [python]
+tags: [python, qrcodegenerator]
 author_profile: false
 search: true
 ---

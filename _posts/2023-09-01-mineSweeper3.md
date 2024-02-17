@@ -2,7 +2,7 @@
 layout: single
 title: "Mine Sweeper Project Process_3"
 categories: project
-tags: [html, css, javaScript]
+tags: [html, css, javaScript, mine_sweeper]
 author_profile: false
 search: true
 ---

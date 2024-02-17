@@ -19,3 +19,4 @@ search: true
 | **move line**               | alt + arrow key         | option + arrow key         |
 | **copy line**               | alt + shift + arrow key | option + shift + arrow key |
 | **setting**                 | ctrl + ,                | cmd + ,                    |
+| **align**                   | shift + tab             | shift + tab                |

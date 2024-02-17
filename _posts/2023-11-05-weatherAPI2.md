@@ -2,7 +2,7 @@
 layout: single
 title: "Weather API Project Process_2"
 categories: project
-tags: [html, css, javaScript]
+tags: [html, css, javaScript, weather_api]
 author_profile: false
 search: true
 ---
