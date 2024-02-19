@@ -207,3 +207,5 @@ finalTotal = format((total / (checkCheckedBox * 3)), ',.2f') # round up 2 decima
 if self.error == False: # if error, shouldn't be displayed
     showinfo("Result", "GPA : " + finalTotal)
 ```
+
+[my github repo](https://github.com/HenryChung98/gpaCalculator)

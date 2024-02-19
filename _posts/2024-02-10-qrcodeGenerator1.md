@@ -69,6 +69,8 @@ img.save(f'{f}.png')
 print('qr code generated and saved in the gallery')
 ```
 
+[my github repo](https://github.com/HenryChung98/qrCodeGenerator)
+
 #### fixed
 
 the size is not allowed greater than 3

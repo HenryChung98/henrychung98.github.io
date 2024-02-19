@@ -77,3 +77,5 @@ function reset() {
 ```
 
 [PLAY](https://henrychung-minesweeper.netlify.app)
+
+[my github repo](https://github.com/HenryChung98/mineSweeper)

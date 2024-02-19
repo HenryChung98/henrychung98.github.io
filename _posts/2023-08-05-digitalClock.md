@@ -155,3 +155,5 @@ var x = setInterval(function() {
 
 })
 ```
+
+[my github repo](https://github.com/HenryChung98/digitalClock)
