@@ -2,7 +2,7 @@
 layout: single
 title: "Mine Sweeper Project Process_3"
 categories: project
-tags: [html, css, javaScript, mine_sweeper]
+tags: [html, css, javaScript, mine-sweeper]
 author_profile: false
 search: true
 ---
@@ -78,4 +78,4 @@ function reset() {
 
 [PLAY](https://henrychung-minesweeper.netlify.app)
 
-[my github repo](https://github.com/HenryChung98/mineSweeper)
+

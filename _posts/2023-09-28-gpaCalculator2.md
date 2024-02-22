@@ -2,7 +2,7 @@
 layout: single
 title: "GPA Calculator Project Process_2"
 categories: project
-tags: [python, tkinter, gpa_calculator]
+tags: [python, tkinter, gpa-calculator]
 author_profile: false
 search: true
 ---
@@ -208,4 +208,4 @@ if self.error == False: # if error, shouldn't be displayed
     showinfo("Result", "GPA : " + finalTotal)
 ```
 
-[my github repo](https://github.com/HenryChung98/gpaCalculator)
+

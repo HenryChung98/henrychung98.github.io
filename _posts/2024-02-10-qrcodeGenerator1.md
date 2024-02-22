@@ -2,10 +2,12 @@
 layout: single
 title: "QR Code Generator"
 categories: project
-tags: [python, qrcodegenerator]
+tags: [python, qr-code-generator]
 author_profile: false
 search: true
 ---
+
+[my github repo](https://github.com/HenryChung98/qrCodeGenerator)
 
 ### Introduction
 
@@ -68,8 +70,6 @@ img.save(f'{f}.png')
 
 print('qr code generated and saved in the gallery')
 ```
-
-[my github repo](https://github.com/HenryChung98/qrCodeGenerator)
 
 #### fixed
 

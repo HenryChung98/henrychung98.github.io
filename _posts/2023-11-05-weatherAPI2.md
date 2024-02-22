@@ -2,7 +2,7 @@
 layout: single
 title: "Weather API Project Process_2"
 categories: project
-tags: [html, css, javaScript, weather_api]
+tags: [html, css, javaScript, weather-api]
 author_profile: false
 search: true
 ---
@@ -254,5 +254,3 @@ document.addEventListener("keyup", function (event) {
   }
 });
 ```
-
-[my github repo](https://github.com/HenryChung98/weatherApp)

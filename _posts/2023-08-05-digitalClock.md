@@ -7,6 +7,8 @@ author_profile: false
 search: true
 ---
 
+[my github repo](https://github.com/HenryChung98/digitalClock)
+
 ### Frame
 
 #### Build frame
@@ -155,5 +157,3 @@ var x = setInterval(function() {
 
 })
 ```
-
-[my github repo](https://github.com/HenryChung98/digitalClock)
