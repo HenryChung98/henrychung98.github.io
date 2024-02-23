@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "GPA Calculator Project Process_1"
+title: "GPA Calculator Project_1"
 categories: project
 tags: [python, tkinter, gpa-calculator]
 author_profile: false

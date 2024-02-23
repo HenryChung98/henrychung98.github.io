@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Weather API Project Process_2"
+title: "Weather API Project_2"
 categories: project
 tags: [html, css, javaScript, weather-api]
 author_profile: false

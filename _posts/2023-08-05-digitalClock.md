@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Digital Clock Project Process"
+title: "Digital Clock Project"
 categories: project
 tags: [html, css, javaScript]
 author_profile: false

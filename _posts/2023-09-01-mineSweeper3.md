@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Mine Sweeper Project Process_3"
+title: "Mine Sweeper Project_3"
 categories: project
 tags: [html, css, javaScript, mine-sweeper]
 author_profile: false

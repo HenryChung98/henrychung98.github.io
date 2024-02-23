@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "QR Code Generator"
+title: "QR Code Generator Project"
 categories: project
 tags: [python, qr-code-generator]
 author_profile: false
