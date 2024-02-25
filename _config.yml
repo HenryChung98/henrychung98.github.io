@@ -107,7 +107,9 @@ author:
   avatar: "/images/logo.png"
   bio: "Henry's blog"
   location: "Canada"
-  email:
+  email: "tongsik98@gmail.com"
+  adsense:
+    ad_client: pub-9996108075082625
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
