@@ -109,7 +109,7 @@ author:
   location: "Canada"
   email: "tongsik98@gmail.com"
   adsense:
-    ad_client: pub-9996108075082625
+    ad_client: ca-pub-9996108075082625
   links:
     - label: "Email"
       icon: "fas fa-fw fa-envelope-square"
