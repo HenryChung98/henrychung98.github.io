@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Plant Grass Error"
+title: "Planting Grass Error"
 categories: jekyll
 tags: [minimal-mistakes]
 author_profile: false
