@@ -16,9 +16,9 @@ minimal_mistakes_skin: "dark" # "air", "aqua", "contrast", "dark", "dirt", "neon
 
 # Site Settings
 locale: "en-US"
-title: "Programming Note"
+title: "Henry's Code Hub"
 title_separator: "|"
-subtitle: "notes"
+subtitle: "programming notes"
 name: "Henry Chung"
 description: "Testing and Debugging."
 url: "https://HenryChung98.github.io"
