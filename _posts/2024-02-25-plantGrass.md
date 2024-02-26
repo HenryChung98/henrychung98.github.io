@@ -10,7 +10,7 @@ use_math: true
 
 If you use github, you may know when you commit, the small square will be filled green.
 
-![des1](/assets/images/2024-02-24-plantGrass/des1.png)
+![des1](/assets/images/2024-02-25-plantGrass/des1.png)
 
 In Korea, we call this planting grass because filling the square green seems like planting grass. The more green you have, the more active the developer you are.
 
