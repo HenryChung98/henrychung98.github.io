@@ -2,12 +2,18 @@
 layout: single
 title: "Digital Clock Project"
 categories: project
-tags: [html, css, javaScript]
+tags: [digital-clock]
 author_profile: false
 search: true
 ---
 
 [my github repo](https://github.com/HenryChung98/digitalClock)
+
+### Programming languages used
+
+- html
+- css
+- javaScript
 
 ### Frame
 

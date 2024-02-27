@@ -2,12 +2,16 @@
 layout: single
 title: "QR Code Generator Project"
 categories: project
-tags: [python, qr-code-generator]
+tags: [qr-code-generator]
 author_profile: false
 search: true
 ---
 
 [my github repo](https://github.com/HenryChung98/qrCodeGenerator)
+
+### Programming languages used
+
+- python
 
 ### Introduction
 

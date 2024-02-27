@@ -2,7 +2,7 @@
 layout: single
 title: "TypeScript1(Introduction)"
 categories: note
-tags: [javaScript, typeScript]
+tags: [typeScript]
 author_profile: false
 search: true
 ---

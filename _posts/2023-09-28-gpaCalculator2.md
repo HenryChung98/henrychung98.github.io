@@ -2,7 +2,7 @@
 layout: single
 title: "GPA Calculator Project_2"
 categories: project
-tags: [python, tkinter, gpa-calculator]
+tags: [gpa-calculator]
 author_profile: false
 search: true
 ---

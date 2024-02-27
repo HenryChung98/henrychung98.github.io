@@ -2,13 +2,17 @@
 layout: single
 title: "GPA Calculator Project_1"
 categories: project
-tags: [python, tkinter, gpa-calculator]
+tags: [gpa-calculator]
 author_profile: false
 search: true
 use_math: true
 ---
 
 [my github repo](https://github.com/HenryChung98/gpaCalculator)
+
+### Programming languages used
+
+- python
 
 ### introduction
 

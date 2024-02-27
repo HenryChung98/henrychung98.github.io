@@ -2,12 +2,18 @@
 layout: single
 title: "Mine Sweeper Project_1"
 categories: project
-tags: [html, css, javaScript, mine-sweeper]
+tags: [mine-sweeper]
 author_profile: false
 search: true
 ---
 
 [my github repo](https://github.com/HenryChung98/mineSweeper)
+
+### Programming languages used
+
+- html
+- css
+- javaScript
 
 ### Initialize
 

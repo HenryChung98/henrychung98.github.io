@@ -2,12 +2,18 @@
 layout: single
 title: "Weather API Project_1"
 categories: project
-tags: [html, css, javaScript, weather-api]
+tags: [weather-api]
 author_profile: false
 search: true
 ---
 
 [my github repo](https://github.com/HenryChung98/weatherApp)
+
+### Programming languages used
+
+- html
+- css
+- javaScript
 
 ### introduction
 
