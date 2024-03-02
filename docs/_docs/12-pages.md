@@ -9,7 +9,7 @@ To better organize all of your pages you can centralize them into a single locat
 
 **Step 1:** Start by placing pages (`.md` or `.html` files) into a `_pages` directory. Meaningfully naming files should be the goal. Avoid patterns like `/about/index.md` as it makes distinguishing between multiple `index.md` files harder.
 
-```bash
+```zsh
 sample-project
 └── _pages/
     ├── 404.md               # custom 404 page
@@ -23,11 +23,11 @@ sample-project
 
 Examples:
 
-| filename            | permalink              |
-| --------            | ---------              |
-| _pages/about.md     | `permalink: /about/`   |
-| _pages/home.md      | `permalink: /`         |
-| _pages/contact.md   | `permalink: /contact/` |
+| filename           | permalink              |
+| ------------------ | ---------------------- |
+| \_pages/about.md   | `permalink: /about/`   |
+| \_pages/home.md    | `permalink: /`         |
+| \_pages/contact.md | `permalink: /contact/` |
 
 **Recommended Front Matter Defaults:**
 

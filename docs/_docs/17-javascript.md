@@ -7,7 +7,7 @@ last_modified_at: 2021-07-23T09:33:35-04:00
 
 The theme's `assets/js/main.min.js` script is built from several vendor, jQuery plugins, and other scripts found in [`assets/js/`](https://github.com/mmistakes/minimal-mistakes/tree/master/assets/js).
 
-```bash
+```zsh
 minimal mistakes
 ├── assets
 |  ├── js

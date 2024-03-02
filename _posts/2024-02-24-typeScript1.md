@@ -21,13 +21,13 @@ TypeScript secures these issues. TypeScript introduces static typing, allowing d
 
 First, create a folder and go to terminal, and get package.json.
 
-```bash
+```zsh
 npm init
 ```
 
 After, we need to install TypeScript.
 
-```bash
+```zsh
 npm install --save-dev typescript
 ```
 
@@ -36,7 +36,7 @@ make sure typescript is added.
 
 and type this
 
-```bash
+```zsh
 npx tsc --init
 ```
 
@@ -47,12 +47,12 @@ Go to package.json, and modify this part.
 
 Now all set up. You can create main.ts and execute typing
 
-```bash
+```zsh
 npm run build
 ```
 
 Once you execute it, main.js will be created. You can execute typing
 
-```bash
+```zsh
 npm start
 ```

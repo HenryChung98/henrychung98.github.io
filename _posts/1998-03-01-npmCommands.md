@@ -7,7 +7,7 @@ author_profile: false
 search: true
 ---
 
-| command               | description                      | example                         |
+| Command               | Description                      | Example                         |
 | --------------------- | -------------------------------- | ------------------------------- |
 | **@version(npm i)**   | Check version                    | npm install pkg_name@version    |
 | **--global(-g)**      | Apply globally                   | npm install pkg_name --global   |

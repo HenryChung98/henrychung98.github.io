@@ -7,7 +7,7 @@ author_profile: false
 search: true
 ---
 
-| Keys                        | Windows                 | Mac                        |
+| Command                     | Windows                 | Mac                        |
 | --------------------------- | ----------------------- | -------------------------- |
 | **global search**           | shift + ctrl + F        | shift + cmd + F            |
 | **multi-select all**        | ctrl + shift + L        | cmd + shift + L            |
