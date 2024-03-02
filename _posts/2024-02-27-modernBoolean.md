@@ -74,7 +74,7 @@ function print(value) {
 }
 ```
 
-In the code, value || "Hello, world!" is that if value is not given, it will return "Hello, world!"(right-hand side) since || operator return right-hand side if left-hand side is falsy.
+In the code, value '||' "Hello, world!" is that if value is not given, it will return "Hello, world!"(right-hand side) since '||' operator return right-hand side if left-hand side is falsy.
 
 ### nullish coalescing operator
 
