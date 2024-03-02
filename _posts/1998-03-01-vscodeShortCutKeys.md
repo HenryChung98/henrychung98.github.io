@@ -1,13 +1,11 @@
 ---
 layout: single
 title: "VSCode Shortcut Keys"
-categories: shortcuts
-tags: [vscode, shortcuts]
+categories: commands
+tags: [vscode]
 author_profile: false
 search: true
 ---
-
-[Minimal-Mistakes Quick Start Guide](https://mmistakes.github.io/minimal-mistakes/docs/quick-start-guide/)
 
 | Keys                        | Windows                 | Mac                        |
 | --------------------------- | ----------------------- | -------------------------- |

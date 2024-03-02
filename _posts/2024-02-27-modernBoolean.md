@@ -57,7 +57,6 @@ console.log(false || false); // false
 
 ```javascript
 console.log(null && undefined); // null
-console.log(0 || true); // true
 console.log("0" && NaN); // NaN
 console.log({} || 123); // {}
 ```
@@ -81,11 +80,9 @@ In the code, value '||' "Hello, world!" is that if value is not given, it will r
 The nullish coalescing (??) operator is a logical operator that returns its right-hand side operand when its left-hand side operand is null or undefined, and otherwise returns its left-hand side operand.
 
 ```javascript
-const title1 = null || "Hello";
-const title2 = null ?? "Hello";
-const title3 = false ?? "Hello";
+const title1 = null ?? "Hello";
+const title2 = false ?? "Hello";
 
 console.log(title1); // Hello
-console.log(title2); // Hello
-console.log(title3); // false
+console.log(title2); // false
 ```

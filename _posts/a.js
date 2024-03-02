@@ -1,7 +1,11 @@
-const obj1 = { a: 1, b: 2 };
-const obj2 = { c: 3, d: 4 };
+const codeit = new Map();
 
-const combinedObject = { ...obj1, ...obj2 };
-console.log(combinedObject); // { a: 1, b: 2, c: 3, d: 4 }
-// const newArray = [...obj1];
-console.log(newArray);
+// set
+codeit.set("title", "strings");
+codeit.set(2024, "int");
+codeit.set(true, "boolean");
+
+// get
+console.log(codeit.get(2024)); 
+console.log(codeit.get(true)); 
+console.log(codeit.get("title")); 
