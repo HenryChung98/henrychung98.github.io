@@ -25,14 +25,17 @@ First, create a folder and go to terminal, and get package.json.
 npm init
 ```
 
+Then you will see package.json.
+
 After, we need to install TypeScript.
 
 ```zsh
 npm install --save-dev typescript
 ```
 
-make sure typescript is added.
-![des1](/assets/images/2024-02-24-typeScript1/des1.png)
+make sure TypeScript is added in devDependencies.
+
+![des1](/assets/images/2024-02-24-TypeScript1/des1.png)
 
 and type this
 
@@ -40,19 +43,22 @@ and type this
 npx tsc --init
 ```
 
+- npx: executing node module
+- tsc: TypeScript compiler module
+- --init: creating initial setting file
+
 now you will see tsconfig.json file is added.
 
-Go to package.json, and modify this part.
-![des2](/assets/images/2024-02-24-typeScript1/des2.png)
+![des2](/assets/images/2024-02-24-TypeScript1/des2.png)
 
-Now all set up. You can create main.ts and execute typing
+Go to package.json, and modify script part
 
-```zsh
-npm run build
-```
+![des3](/assets/images/2024-02-24-TypeScript1/des3.png)
 
-Once you execute it, main.js will be created. You can execute typing
+so that you can run the code with typing 'npm run build' for TypeScript, and 'npm run start' for JavaScript.
 
-```zsh
-npm start
-```
+If you create main.ts file and execute it, main.js file will be created since TypeScript compiler(tsc) convert to js.
+
+During this process, tsc not only convert to JavaScript file, but also [Type Check](https://www.TypeScriptlang.org/docs/handbook/advanced-types.html), [Transpile](https://www.freecodecamp.org/news/what-is-type-erasure-in-typescript/) and execute in node.js or web browser.
+
+JavaScript file will be created depending on the version you set. You can change it in tsconfig.json file.

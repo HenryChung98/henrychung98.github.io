@@ -9,36 +9,33 @@ search: true
 
 ### shortcuts
 
-| **Command**        | **Description**                                            |
-| ------------------ | ---------------------------------------------------------- |
-| Navigation         | ---------------------------------------------------        |
-| ------------       | ---------------------------------------------------        |
-| `ctrl + A`         | move to the beginning of the line                          |
-| `ctrl + E`         | move to the end of the line                                |
-| `ctrl + U`         | delete from the cursor to the beginning of the line        |
-| `ctrl + K`         | delete from the cursor to the end of the line              |
-| `ctrl + W`         | delete the word to the left of the cursor                  |
-| `ctrl + L`         | clear the screen                                           |
-| History            | ---------------------------------------------------        |
-| `ctrl + R`         | search backward in history                                 |
-| `ctrl + G`         | escape from history searching mode                         |
-| `!!`               | repeat the last command                                    |
-| `!n`               | repeat the nth command in history                          |
-| `!$`               | refer to the last argument of the previous command         |
-| process management | ---------------------------------------------------        |
-| `ctrl + C`         | interrupt/kill the current foreground process              |
-| `ctrl + Z`         | suspend the current foreground process                     |
-| `bg`               | put a suspended process in the background                  |
-| `fg`               | bring the most recent background process to the foreground |
-| file and directory | ---------------------------------------------------        |
-| `tab`              | auto-complete file and directory names                     |
-| `ctrl + D`         | exit the current shell(or end of input)                    |
-| miscellaneous      | ---------------------------------------------------        |
-| `ctrl + S`         | stop the output to the screen (XOFF)                       |
-| `ctrl + Q`         | resume the output to the screen (XON)                      |
-| `ctrl + T`         | swap the last two characters before the cursor             |
-| `ctrl + Y`         | paste the last deleted text                                |
-| `ctrl + _`         | undo the last change                                       |
+| **Command**            | **Description**                                     |
+| ---------------------- | --------------------------------------------------- |
+| **Navigation**         |                                                     |
+| `ctrl + A`             | Move to the beginning of the line                   |
+| `ctrl + E`             | Move to the end of the line                         |
+| `ctrl + U`             | Delete from the cursor to the beginning of the line |
+| `ctrl + K`             | Delete from the cursor to the end of the line       |
+| `ctrl + W`             | Delete the word to the left of the cursor           |
+| `ctrl + L`             | Clear the screen                                    |
+| **History**            |                                                     |
+| `ctrl + R`             | Search backward in history                          |
+| `ctrl + G`             | Escape from history searching mode                  |
+| `!!`                   | Repeat the last command                             |
+| `!n`                   | Repeat the nth command in history                   |
+| `!$`                   | Refer to the last argument of the previous command  |
+| **process management** |                                                     |
+| `ctrl + C`             | Interrupt/kill the current foreground process       |
+| `ctrl + Z`             | Suspend the current foreground process              |
+| **file and directory** |                                                     |
+| `tab`                  | Auto-complete file and directory names              |
+| `ctrl + D`             | Exit the current shell(or end of input)             |
+| **miscellaneous**      |                                                     |
+| `ctrl + S`             | Stop the output to the screen (XOFF)                |
+| `ctrl + Q`             | Resume the output to the screen (XON)               |
+| `ctrl + T`             | Swap the last two characters before the cursor      |
+| `ctrl + Y`             | Paste the last deleted text                         |
+| `ctrl + _`             | Undo the last change                                |
 
 ### navigation
 
@@ -51,7 +48,7 @@ search: true
 | `ls -t`          | list sorted by date                   |
 | `cd [directory]` | Change directory.                     |
 | `cd ..`          | Move to the parent directory.         |
-| `cd /`           | go to root directory                  |
+| `cd /`           | Move to root directory                |
 | `cd ~`           | Move to the home directory.           |
 
 ### file operation
@@ -68,8 +65,8 @@ search: true
 | `cat [file]`                    | Display the content of a file.         |
 | `cat [file1] [file2] > [file3]` | Merge files 1 and 2 into file3         |
 | `more [file]` or `less [file]`  | Display content one screen at a time.  |
-| `less -N [file]`                | lnclude line numbers                   |
-| `less -S [file]`                | wrap long lines                        |
+| `less -N [file]`                | Include line numbers                   |
+| `less -S [file]`                | Wrap long lines                        |
 | `man {command}`                 | Display commands manual                |
 | `apt-get install`               | Install applications in linux          |
 | `head [file]`                   | Display the first few lines of a file. |
