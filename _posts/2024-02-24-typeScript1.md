@@ -55,7 +55,7 @@ Go to package.json, and modify script part
 
 ![des3](/assets/images/2024-02-24-TypeScript1/des3.png)
 
-so that you can run the code with typing 'npm run build' for TypeScript, and 'npm run start' for JavaScript.
+so that you can run the code with typing 'npm run build' for TypeScript, and 'npm start' for JavaScript.
 
 If you create main.ts file and execute it, main.js file will be created since TypeScript compiler(tsc) convert to js.
 
