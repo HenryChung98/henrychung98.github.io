@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "TypeScript1(Introduction)"
+title: "TypeScript_1(Introduction)"
 categories: note
 tags: [typeScript]
 author_profile: false

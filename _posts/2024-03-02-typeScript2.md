@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "TypeScript1(Type)"
+title: "TypeScript_2(Type)"
 categories: note
 tags: [typeScript]
 author_profile: false
