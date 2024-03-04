@@ -60,6 +60,10 @@ type Pair<T, U> = {
 };
 
 let coordinates: Pair<number, string> = { first: 10, second: "20N" };
+
+
+const elem = document.querySelector<HTMLInputElement>('input.username');
+
 ```
 
 ##### mapped type alias

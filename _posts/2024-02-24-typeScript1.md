@@ -35,7 +35,7 @@ npm install --save-dev typescript
 
 make sure TypeScript is added in devDependencies.
 
-![des1](/assets/images/2024-02-24-TypeScript1/des1.png)
+![des1](/assets/images/2024-02-24-typeScript1/des1.png)
 
 and type this
 
@@ -49,15 +49,19 @@ npx tsc --init
 
 now you will see tsconfig.json file is added.
 
-![des2](/assets/images/2024-02-24-TypeScript1/des2.png)
+![des2](/assets/images/2024-02-24-typeScript1/des2.png)
 
 Go to package.json, and modify script part
 
-![des3](/assets/images/2024-02-24-TypeScript1/des3.png)
+![des3](/assets/images/2024-02-24-typeScript1/des3.png)
 
 so that you can run the code with typing 'npm run build' for TypeScript, and 'npm start' for JavaScript.
 
-If you create main.ts file and execute it, main.js file will be created since TypeScript compiler(tsc) convert to js.
+If you create main.ts file and execute it, main.js file will be created since TypeScript compiler(tsc) convert to js. To separate it, go to tsconfig.json and set
+
+![des4](/assets/images/2024-02-24-typeScript1/des4.png)
+
+The js file will be created in dist directory and it is easy to maintain.
 
 During this process, tsc not only convert to JavaScript file, but also [Type Check](https://www.TypeScriptlang.org/docs/handbook/advanced-types.html), [Transpile](https://www.freecodecamp.org/news/what-is-type-erasure-in-typescript/) and execute in node.js or web browser.
 
