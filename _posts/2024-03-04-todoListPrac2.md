@@ -54,3 +54,52 @@ function writeCSV() {
 ```
 
 ![des2](/assets/images/2024-03-04-todoListPrac2/des2.png)
+
+##### Learned New
+
+I learned writing file is not allowed from js, or ts. Instead, there is a function called localStorage, which is a web storage technology in web browsers that allows you to store small amounts of data on the client side. So need to modify the csvContent parts.
+
+```typescript
+function saveIt() {
+  let todoItems: { isChecked: boolean; text: string }[] = [];
+
+  // select all divs in ul
+  const listItems = todoList.querySelectorAll(".listBox");
+
+  listItems.forEach((div) => {
+    // need to check div.children[0] is checkBox
+    const checkBoxEle = div.children[0];
+    let isChecked: boolean = (checkBoxEle as HTMLInputElement).checked;
+
+    // could be null, used js logical operator
+    let liContent: string = div.children[1].textContent || "";
+    todoItems.push({ isChecked, text: liContent });
+  });
+  localStorage.setItem("todoItems", JSON.stringify(todoItems));
+}
+```
+
+To get the localStorage content, you need onLoad function. You can write like this
+
+```typescript
+window.addEventListener("load", () => {
+  const savedItems = localStorage.getItem("todoItems");
+
+  if (savedItems) {
+    const todoItems: { isChecked: boolean; text: string }[] =
+      JSON.parse(savedItems);
+
+    todoItems.forEach((item) => {
+      addNewList(item.text);
+      const listBox = todoList.lastElementChild as HTMLDivElement;
+      const checkBox = listBox.children[0] as HTMLInputElement;
+      checkBox.checked = item.isChecked;
+      listBox.children[1].classList.toggle("done", item.isChecked);
+    });
+  }
+});
+```
+
+It seems like most of the functionality has been implemented, and now it just needs some design modifications.
+
+This was a simple project done for practice, and I am planning make more sophisticated to-do list with Next.js(or React).
