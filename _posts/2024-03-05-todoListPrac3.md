@@ -33,7 +33,7 @@ todoItems.push({ isChecked, text: liContent, savedDate: listDate });
 
 #### from scratch
 
-I think I should have done creating a calendar and create to do list. I will start from scratch for to do list part.
+I think I should have done creating a calendar and create to do list. I have no clue how can I apply calendar to my previous code. I will start from scratch for to do list part.
 
 First, get selected date.
 
@@ -76,7 +76,7 @@ function formattingDate(date: Date): string {
 }
 ```
 
-and modify
+and replace
 
 ```typescript
 document.addEventListener("DOMContentLoaded", () => {
@@ -88,10 +88,74 @@ document.addEventListener("click", () => {
 });
 ```
 
-And need database list
+And need database list. First, create an interface and a database list.
 
 ```typescript
-const dbbList: {
-  [key: string]: { date: Date; isChecked: boolean; content: string };
-}[] = [];
+interface Data {
+  date: Date;
+  isChecked: boolean;
+  content: string;
+}
+
+const dbList: Data[] = [];
+```
+
+After, need to create a function for adding data to the database list.
+
+```typescript
+function addData(selectedDate: Date, isChecked: boolean, content: string) {
+  const newItem: Data = {
+    date: selectedDate,
+    isChecked: isChecked,
+    content: content,
+  };
+  dbList.push(newItem);
+  console.log(dbList[dbList.length - 1]);
+}
+```
+
+![des3](/assets/images/2024-03-05-todoListPrac3/des3.png)
+
+And now I will create showData function. This is pretty same idea as the addNewList function that I have created before. The point of this function is get data from the database and compare with current selected data and show.
+
+```typescript
+function showData(db: Data[], selectedDate: Date) {
+  // to erase previous data and show selected date's data
+  todoList.innerHTML = "";
+
+  db.forEach((item) => {
+    if (selectedDate.getDate() === item.date.getDate()) {
+      const checkBox = document.createElement("input") as HTMLInputElement;
+      checkBox.type = "checkbox";
+      const li = document.createElement("li") as HTMLLIElement;
+      li.textContent = item.content;
+      checkBox.addEventListener("change", () => {
+        li.classList.toggle("done", checkBox.checked);
+      });
+      // remove button
+      const removeBtn = document.createElement("button") as HTMLButtonElement;
+      removeBtn.textContent = "Remove";
+      removeBtn.classList.add("removeBtn");
+      removeBtn.addEventListener("click", () => {
+        listBox.remove();
+
+        // Remove the item from dbList array
+        const index = dbList.findIndex((dbItem) => dbItem === item);
+        if (index !== -1) {
+          dbList.splice(index, 1);
+          showData(dbList, selectedDate); // Update displayed data
+        }
+      });
+      // contains checkbox, li, removeBtn
+      const listBox = document.createElement("div") as HTMLDivElement;
+      listBox.classList.add("listBox");
+      listBox.appendChild(checkBox);
+      listBox.appendChild(li);
+      listBox.appendChild(removeBtn);
+
+      // append div to ul
+      todoList.appendChild(listBox);
+    }
+  });
+}
 ```
