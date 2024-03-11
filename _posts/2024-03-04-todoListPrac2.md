@@ -57,7 +57,7 @@ function writeCSV() {
 
 ##### Learned New
 
-I learned writing file from js, or ts is not allowed. Instead, there is a function called localStorage, which is a web storage technology in web browsers that allows you to store small amounts of data on the client side. So need to modify the csvContent parts.
+I learned writing file from js, or ts is not allowed. Instead, there is a function called localStorage, which is a web storage technology in web browsers that allows you to store small amounts of data on the client side.
 
 ```typescript
 function saveIt() {

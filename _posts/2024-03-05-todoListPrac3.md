@@ -9,7 +9,7 @@ search: true
 
 #### calendar class
 
-I will add small calendar to save todo list by date. I created new file to contain calendar class. I got a calendar class from chatGPT, and modified serveral issues.
+I will add small calendar to save todo list by date. I created new file to contain calendar class. I got a calendar class from ChatGPT, and modified serveral parts that doesn't work since ChatGPT 3.5 cannot write perfect code.
 
 Now I see a calendar.
 
@@ -33,7 +33,7 @@ todoItems.push({ isChecked, text: liContent, savedDate: listDate });
 
 #### from scratch
 
-I think I should have done creating a calendar and create to do list. I have no clue how can I apply calendar to my previous code. I will start from scratch for to do list part.
+I think I should have done creating a calendar and create to do list. I have no clue how can I apply calendar to my previous code. I will start from scratch for to do list part again.
 
 First, get selected date.
 
