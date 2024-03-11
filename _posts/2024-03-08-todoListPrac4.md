@@ -53,6 +53,43 @@ if (index !== -1) {
 ```
 
 ![des1](/assets/images/2024-03-08-todoListPrac4/des1.png)
+
 ![des2](/assets/images/2024-03-08-todoListPrac4/des2.png)
 
-Now just need to save dbList in localStorage.
+Now just need saving dbList in localStorage. I added a code for that in addData function.
+
+```typescript
+function addData(selectedDate: Date, isChecked: boolean, content: string) {
+
+  ...
+
+  localStorage.setItem("todoItems", JSON.stringify(dbList));
+}
+```
+
+##### Learned New2
+
+If I want to get 'date' from localStorage, I need to parse it, but when I try to parse 'date', there is a problem.
+
+![des3](/assets/images/2024-03-08-todoListPrac4/des3.png)
+
+I got '2024-03-11T03:21:17.407Z', which follows the ISO 8601 format that is an international standard for representing dates and times in a way that is unambiguous, easy to read, and independent of language or region. JavaScript cannnot read this format, so I have handle it.
+
+```typescript
+function loadFromLocalStorage() {
+  const savedItems = localStorage.getItem("dbList");
+
+  if (savedItems) {
+    const todoItems: Data[] = JSON.parse(savedItems);
+    todoItems.forEach((item) => {
+      item.date = new Date(item.date);
+    });
+    console.log(`loaded data: ${todoItems[0].date}`);
+    dbList.push(...todoItems);
+  }
+}
+```
+
+![des4](/assets/images/2024-03-08-todoListPrac4/des4.png)
+
+Almost everything works properly, now I just need to add 'localStorage.setItem("dbList", JSON.stringify(dbList));' this line to event listener of removeBtn, checkBox so that data in dbList will be set correctly.
