@@ -1,13 +1,177 @@
 ---
 layout: single
-title: "Pandas Basic_3(readCSVFile)"
+title: "Pandas Basic"
 categories: note
 tags: [python, numpy, pandas]
 author_profile: false
 search: true
 ---
 
-### read CSV file
+### Introduction
+
+Pandas is a open-source data manipulation and analysis library.
+It provides data structures for efficiently storing and manipulating large datasets and tools for working with structured data.
+
+```python
+import pandas as pd
+```
+
+Here is simple example of creating a DataFrame using pandas
+
+```python
+data = {'Name': ['Alice', 'Bob', 'Charlie'],
+        'Age': [25, 30, 35],
+        'City': ['New York', 'San Francisco', 'Los Angeles']}
+
+df = pd.DataFrame(data)
+
+print(df)
+#      Name  Age           City
+# 0   Alice   25       New York
+# 1     Bob   30  San Francisco
+# 2  Charlie   35    Los Angeles
+
+print(type(df)) # pandas.core.frame.DataFrame
+print(df.columns) # [Name, Age, City]
+```
+
+It is quite easy to create data frames with pandas.
+
+```python
+import pandas as pd
+two_dimensional_list = [["a", 50, 86], ["b", 89, 31], ["c", 68, 91], ["d", 88, 75]]
+my_df = pd.DataFrame(two_dimensional_list)
+print(my_df)
+```
+
+output
+
+|       | **0** | **1** | **2** |
+| ----- | ----- | ----- | ----- |
+| **0** | a     | 50    | 86    |
+| **1** | b     | 89    | 31    |
+| **2** | c     | 68    | 91    |
+| **3** | b     | 88    | 75    |
+
+If you do not define the row, column names, it will be automatically generated 0, 1, 2, 3 ...
+
+You can define the names like this
+
+```python
+import pandas as pd
+two_dimensional_list = [["a", 50, 86], ["b", 89, 31], ["c", 68, 91], ["d", 88, 75]]
+my_df = pd.DataFrame(two_dimensional_list, columns=["name", "english_score", "math_score"], index=["a", "b", "c", "d"])
+print(my_df)
+```
+
+output
+
+|       | **name** | **english_score** | **math_score** |
+| ----- | -------- | ----------------- | -------------- |
+| **a** | a        | 50                | 86             |
+| **b** | b        | 89                | 31             |
+| **c** | c        | 68                | 91             |
+| **d** | b        | 88                | 75             |
+
+If you want to check data types,
+
+```python
+print(my_df.dtypes)
+# name             object
+# english_score     int64
+# math_score        int64
+# dtype: object
+```
+
+### Data Frame
+
+Data frame can contain a variety of data types, but within the same column, it should be of the same data type.
+
+You can also create a frame using dictionary
+
+```python
+import numpy as np
+import pandas as pd
+
+names = ['a', 'b', 'c', 'd']
+english_scores = [50, 89, 68, 88]
+math_scores = [86, 31, 91, 75]
+
+dict1 = {
+    'name': names,
+    'english_score': english_scores,
+    'math_score': math_scores
+}
+
+dict2 = {
+    'name': np.array(names),
+    'english_score': np.array(english_scores),
+    'math_score': np.array(math_scores)
+}
+
+dict3 = {
+    'name': pd.Series(names),
+    'english_score': pd.Series(english_scores),
+    'math_score': pd.Series(math_scores)
+}
+
+# same outputs
+df1 = pd.DataFrame(dict1)
+df2 = pd.DataFrame(dict2)
+df3 = pd.DataFrame(dict3)
+
+print(df1)
+
+```
+
+output
+
+|       | **name** | **english_score** | **math_score** |
+| ----- | -------- | ----------------- | -------------- |
+| **a** | a        | 50                | 86             |
+| **b** | b        | 89                | 31             |
+| **c** | c        | 68                | 91             |
+| **d** | b        | 88                | 75             |
+
+or
+
+```python
+import numpy as np
+import pandas as pd
+
+my_list = [
+    {'name': 'dongwook', 'english_score': 50, 'math_score': 86},
+    {'name': 'sineui', 'english_score': 89, 'math_score': 31},
+    {'name': 'ikjoong', 'english_score': 68, 'math_score': 91},
+    {'name': 'yoonsoo', 'english_score': 88, 'math_score': 75}
+]
+
+# if you do not specify the order of the column, it might be arranged it alphabetically.
+df = pd.DataFrame(my_list, columns=["english_score", "math_score", "name"])
+print(df)
+```
+
+output
+
+|       | **english_score** | **math_score** | **name** |
+| ----- | ----------------- | -------------- | -------- |
+| **a** | 50                | 86             | a        |
+| **b** | 89                | 31             | b        |
+| **c** | 68                | 91             | c        |
+| **d** | 88                | 75             | b        |
+
+Several dtypes that can be contained in pandas.
+
+| **dtype**  | **explain**   |
+| ---------- | ------------- |
+| int64      | int           |
+| float64    | float         |
+| object     | string        |
+| bool       | boolean       |
+| datetime64 | date and time |
+| category   | category      |
+
+### Read CSV File
 
 Using pandas, you can quite easily read CSV files.
 
@@ -65,7 +229,7 @@ then you will get this frame
 | **iPhone XS**     | 2018-09-21   | 5.8         | 4GB        | iOS 12.0    | Yes         |
 | **iPhone XS Max** | 2018-09-21   | 6.5         | 4GB        | iOS 12.0    | Yes         |
 
-### indexing
+### Indexing
 
 You can access the data
 
@@ -163,11 +327,11 @@ output
 | **iPhone XS**     | 2018-09-21   | 5.8         | 4GB        | iOS 12.0    | Yes         |
 | **iPhone XS Max** | 2018-09-21   | 6.5         | 4GB        | iOS 12.0    | Yes         |
 
-### indexing table
+#### Indexing Table
 
 Here is a table of indexing syntax
 
-#### Indexing by Name
+##### Indexing by Name
 
 |                       | Basic Form                            | Shortcut Form                  |
 | --------------------- | ------------------------------------- | ------------------------------ |
@@ -178,9 +342,8 @@ Here is a table of indexing syntax
 | List of column names  | `df.loc[:, ["col4", "col6", "col3"]]` | `df[["col4", "col6", "col3"]]` |
 | Slicing column names  | `df.loc[:, "col2":"col5"]`            |                                |
 
-#### Indexing by Position
+##### Indexing by Position
 
-```markdown
 |                           | Basic Form              | Shortcut Form |
 | ------------------------- | ----------------------- | ------------- |
 | Single row by position    | `df.iloc[8]`            |               |
@@ -189,4 +352,3 @@ Here is a table of indexing syntax
 | Single column by position | `df.iloc[:, 3]`         |               |
 | List of column positions  | `df.iloc[:, [3, 5, 6]]` |               |
 | Slicing column positions  | `df.iloc[:, 3:7]`       |               |
-```

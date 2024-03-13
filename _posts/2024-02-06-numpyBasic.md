@@ -1,13 +1,13 @@
 ---
 layout: single
-title: "NumPy Basic_1(Introduction)"
+title: "NumPy Basic"
 categories: note
 tags: [python, numpy]
 author_profile: false
 search: true
 ---
 
-### introduction
+### Introduction
 
 NumPy(Numerical Python) is a powerful numerical library in Python that provides support for large, multi-dimensional arrays and matrices, along with a collection of mathematical functions to operate on these arrays.
 
@@ -17,9 +17,7 @@ As it is libary, you need to import it
 import numpy as np
 ```
 
-### code
-
-#### simple codes
+#### Simple Examples
 
 ```python
 array1 = np.array([2, 3, 5, 6, 11, 13]) # one-dimensional array
@@ -35,7 +33,7 @@ print(array1.size) # 6
 print(array2.size) # 12
 ```
 
-#### several methods
+#### Several Methods
 
 full
 You can create an array with a specified shape(number) and fill it with a constant value.
@@ -64,7 +62,7 @@ array1 = numpy.arange(6)
 print(array1) # [0 1 2 3 4 5]
 ```
 
-#### indexing, slicing
+#### Indexing, Slicing
 
 indexing
 It is no different from normal indexing, but there is a few things that can be done only with numpy.
@@ -91,4 +89,62 @@ array1 = np.array([2, 3, 4, 5, 7, 11, 13])
 print(array1[2:5]) # [4, 5, 7]
 print(array1[:5]) # [2, 3, 4, 5, 7]
 print(array1[2:6:2]) # [4, 6]
+```
+
+### Calculation
+
+When calculating each value in array, use for loop.
+
+This is multiplied by 2
+
+```python
+array1 = [1, 2, 3, 4, 5]
+for i in range(len(array1)):
+    array1[i] = 2 * array1[i]
+```
+
+But with numpy, we do not need for loop and do like this
+
+```python
+array1 = np.arange(10) # 0 ~ 9
+array2 = np.arange(10, 20) # 10 ~ 19
+
+print(array1 * 2) # [0, 2, 4, 6 ... 18]
+print(array2 + 2) # [12, 13, 14, 15 ... 21]
+print(array1 + array2) # [10, 12, 14, 16 ... 28]
+```
+
+### Boolean
+
+boolean calculation as well
+
+```python
+array1 = np.array([1, 2, 3, 4, 5, 6])
+booleans np.array([True, True, True, False, False, True])
+
+
+print(array1 > 3) # [False, False, False, True, True, True]
+print(array1 % 2 == 0) # [False, True, False, True, False, True]
+
+print(np.where(booleans)) # [0, 1, 2, 5] -> returns index number that has true
+
+# you can apply like
+print(np.where(array1 > 3)) # [3, 4, 5]
+filter = np.where(array1 > 3)
+array1[filter] # [4, 5, 6] -> returns value which is greater than 3
+```
+
+### Statistics
+
+NumPy also provides basic statistics.
+
+```python
+array1 = np.array([14, 6, 13, 21, 23, 31, 9, 5])
+
+print(array1.max()) # 31
+print(array1.min()) # 5
+print(array1.mean()) # 15.25 (average)
+print(np.median(array1)) # 13.5 (In this case, it has even number of elements which are 13 and 14, so it returns (13 + 14) / 2)
+print(array1.std()) # 8.496322733983215
+print(array1.var()) # 72.1875
 ```

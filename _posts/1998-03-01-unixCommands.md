@@ -7,7 +7,7 @@ author_profile: false
 search: true
 ---
 
-### shortcuts
+### Shortcuts
 
 | **Command**            | **Description**                                     |
 | ---------------------- | --------------------------------------------------- |
@@ -37,7 +37,7 @@ search: true
 | `ctrl + Y`             | Paste the last deleted text                         |
 | `ctrl + _`             | Undo the last change                                |
 
-### navigation
+### Navigation
 
 | **Command**      | **Description**                       |
 | ---------------- | ------------------------------------- |
@@ -51,7 +51,7 @@ search: true
 | `cd /`           | Move to root directory                |
 | `cd ~`           | Move to the home directory.           |
 
-### file operation
+### File Operation
 
 | **Command**                     | **Description**                        |
 | ------------------------------- | -------------------------------------- |
@@ -74,7 +74,7 @@ search: true
 | `tail [file]`                   | Display the last few lines of a file.  |
 | `tail -n 5 [file]`              | Display last five lines from a file.   |
 
-### text handling
+### Text Handling
 
 | **Command**                           | **Description**                               |
 | ------------------------------------- | --------------------------------------------- |
@@ -94,7 +94,7 @@ search: true
 | `nano [file]`                         | A simple text editor                          |
 | `vim [file]`                          | A powerful text editor                        |
 
-### compression
+### Compression
 
 | **Command**                                | **Description**                     |
 | ------------------------------------------ | ----------------------------------- |
@@ -108,7 +108,7 @@ search: true
 | `zip [archive.zip] [files/directories]`    | Create a zip archive.               |
 | `unzip [archive.zip]`                      | Extract files from a zip archive.   |
 
-### networking
+### Networking
 
 | **Command**                                | **Description**                                        |
 | ------------------------------------------ | ------------------------------------------------------ |
@@ -129,7 +129,7 @@ search: true
 | `curl {url}`                               | A command-line tool for making HTTP requests           |
 | `iptables {options}`                       | Tool to manage kernel Netfilter firewall rules         |
 
-### process management
+### Process Management
 
 | **Command**               | **Description**                                     |
 | ------------------------- | --------------------------------------------------- |
@@ -148,7 +148,7 @@ search: true
 | `bg [job_number]`         | Put a suspended job in the background.              |
 | `fg [job_number]`         | Bring a background job to the foreground.           |
 
-### searching
+### Searching
 
 | **Command**                              | **Description**                                        |
 | ---------------------------------------- | ------------------------------------------------------ |
@@ -165,7 +165,7 @@ search: true
 | `grep -n [pattern] [file]`               | Show line numbers along with matching lines.           |
 | `grep -A 2 -B 2 [pattern] [file]`        | Display lines of context around matching lines.        |
 
-### system information
+### System Information
 
 | **Command**          | **Description**                                     |
 | -------------------- | --------------------------------------------------- |

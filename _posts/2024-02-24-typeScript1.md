@@ -7,7 +7,7 @@ author_profile: false
 search: true
 ---
 
-### introduction
+### Introduction
 
 TypeScript is a superset of JavaScript that adds static typing to the language. It brings several advantages to the development process, making it a useful choice for many developers and projects.
 

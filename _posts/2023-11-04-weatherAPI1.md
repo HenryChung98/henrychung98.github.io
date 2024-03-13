@@ -15,7 +15,7 @@ search: true
 - css
 - javaScript
 
-### introduction
+### Introduction
 
 We will make simple weather app using [Open Weather API](https://openweathermap.org/api).
 First we need to prepare assets for search button, weather icons, wind speed, air quality, and humidity.

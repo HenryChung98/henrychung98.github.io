@@ -1,24 +1,61 @@
 ---
 layout: single
-title: "Python tkinter_2(Input)"
+title: "Python Tkinter"
 categories: note
 tags: [python, tkinter]
 author_profile: false
 search: true
 ---
 
+### Introduction
+
+tkinter is a Python library that can be used to construct basic graphical user interface (GUI) applications.
+
+### Import
+
+```python
+from tkinter import *
+```
+
+### Initialization
+
+e.g.
+
+```python
+class MyGUI:
+def __init__(self): # constructor(self = this)
+self.myWindow = Tk()
+self.myWindow.geometry("300x300+100+100") # width x height + left + top
+
+        self.myWindow.title("title") # title
+
+        self.frame1 = Frame(self.myWindow, width = 280, height = 140, bg="yellow")
+        self.frame1.place(x=10, y=10)
+
+        self.frame2 = Frame(self.myWindow, width = 280, height = 140, bg="green")
+        self.frame2.place(x=10, y=150)
+
+        # positioned based on frame2 / fg = fontColor / bg = backgroundColor
+        self.label = Label(self.frame2, text="Hello World", fg="yellow", bg="green")
+        self.label.place(x=10, y=10)
+
+        mainloop() # keeps the program running
+
+myGui = MyGUI() # calling constructor(default)
+```
+
+[more info](https://docs.python.org/3/library/tkinter.html)
+
+### Inputs
+
 There are several input methods
 But before we go, you may want to import messagebox library to check input is successfully entered.
-
-### import
 
 ```python
 from tkinter.messagebox import * # for message box
 ```
 
-### inputs
-
-#### button
+#### Button
 
 ```python
 
@@ -35,7 +72,7 @@ def doThis(self):
     showerror("Response", "Thanks for clicking") # show error box(warning)
 ```
 
-#### entry
+#### Entry
 
 ```python
 
@@ -53,7 +90,7 @@ def doThis(self):
 
 ```
 
-#### radio button
+#### Radio Button
 
 ```python
 self.choice=StringVar() # getting value from the radio button
@@ -74,7 +111,7 @@ def doThis(self):
     showinfo("Response", str(self.choice.get()))
 ```
 
-#### check button
+#### Check Button
 
 ```python
 self.choice1=IntVar()

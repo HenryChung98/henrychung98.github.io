@@ -15,7 +15,7 @@ search: true
 - css
 - typeScript
 
-### introduction
+### Introduction
 
 This project is for practicing TypeScript.
 
