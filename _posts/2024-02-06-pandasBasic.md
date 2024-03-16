@@ -352,3 +352,60 @@ Here is a table of indexing syntax
 | Single column by position | `df.iloc[:, 3]`         |               |
 | List of column positions  | `df.iloc[:, [3, 5, 6]]` |               |
 | Slicing column positions  | `df.iloc[:, 3:7]`       |               |
+
+### Handling DataFrame
+
+#### Modify
+
+```python
+# modify one element
+iphone_df.loc['iPhone 7', "memory"] = '2.5GB'
+
+# modify one row
+iphone_df.loc['iPhone 8'] = ['2015-09-22', '4.7', '2.5GB', 'ios 11.0', 'No']
+
+# modify one column
+iphone_df['display'] = ['4.5 in' '4.7 in'...]
+ipohne_df['Face ID'] = 'Yes' # will be modified all rows to 'Yes'
+
+# modify multiple rows
+iphone_df.loc[['iphone 7', 'iphone 8']] = 'a'
+iphone_df.loc['iphone 7' : 'iphone 8'] = 'a'
+```
+
+#### Add, Delete
+
+##### Add
+
+```python
+# will be added end of the row
+iphone_df.loc['iPhone XR'] = ['2017-11-03', '5.8', '3GB', 'iOS 11.0', 'Yes']
+
+# will be added end of the column
+iphone_df['Company'] = 'Apple'
+```
+
+##### Delete
+
+```python
+# delete selected row
+iphone_df.drop('iPhone XR', axis='index', inplace=True)
+
+# delete selected column
+iphone_df.drop('Company', axis='columns', inplace=True)
+```
+
+if inplace=False, the original data frame will not be affected.
+
+#### Rename index/column
+
+```python
+# this create new data frame
+iphone_df.rename(columns={'released' : 'Released', 'display' : 'Display'...})
+
+# this modify the original data frame
+iphone_df.rename(columns={'released': 'Released', 'display' : 'Display'...}, inplace=True)
+
+# naming index name
+iphone_df.index.name = 'Model Name'
+```
