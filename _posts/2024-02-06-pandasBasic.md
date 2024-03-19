@@ -409,3 +409,73 @@ iphone_df.rename(columns={'released': 'Released', 'display' : 'Display'...}, inp
 # naming index name
 iphone_df.index.name = 'Model Name'
 ```
+
+### Big DataFrame
+
+#### Get Data From Top or Bottom
+
+```python
+iphone_df.head(3) # top 3
+iphone_df.tail(3) # bottom 3
+```
+
+|       | Unnamed: 0    | released   | display | memory | version  | Face ID |
+| ----- | ------------- | ---------- | ------- | ------ | -------- | ------- |
+| **0** | iPhone 7      | 2016-09-16 | 4.7     | 2GB    | iOS 10.0 | No      |
+| **1** | iPhone 7 Plus | 2016-09-16 | 5.5     | 3GB    | iOS 10.0 | No      |
+| **2** | iPhone 8      | 2017-09-22 | 4.7     | 2GB    | iOS 11.0 | No      |
+
+|       | Unnamed: 0    | released   | display | memory | version  | Face ID |
+| ----- | ------------- | ---------- | ------- | ------ | -------- | ------- |
+| **4** | iPhone X      | 2017-11-03 | 5.8     | 3GB    | iOS 11.0 | Yes     |
+| **5** | iPhone XS     | 2018-09-21 | 5.8     | 4GB    | iOS 12.0 | Yes     |
+| **6** | iPhone XS Max | 2018-09-21 | 6.5     | 4GB    | iOS 12.0 | Yes     |
+
+```python
+iphone_df.shape # (n rows, n columns)
+```
+
+#### Get Information of the DataFrame
+
+```python
+iphone_df.info()
+```
+
+```txt
+<class 'pandas.core.frame.DataFrame'>
+RangeIndex: 7 entries, 0 to 6
+Data columns (total 7 columns):
+ #   Column       Non-Null Count  Dtype
+---  ------       --------------  -----
+ 0   Unnamed: 0   7 non-null      object
+ 1   released     7 non-null      object
+ 2   display      7 non-null      float64
+ 3   memory       7 non-null      object
+ 4   version      7 non-null      object
+ 5   Face ID      7 non-null      object
+dtypes: float64(1), object(6)
+memory usage: 520.0+ bytes
+```
+
+```python
+iphone_df.describe()
+```
+
+Returns columns that consisting only of numbers.
+
+|       | display  |
+| ----- | -------- |
+| count | 7.000000 |
+| mean  | 5.357143 |
+| std   | 0.687871 |
+| min   | 4.700000 |
+| 25%   | 4.700000 |
+| 50%   | 5.500000 |
+| 75%   | 5.800000 |
+| max   | 6.500000 |
+
+#### Sort the DataFrame
+
+```python
+iphone_df.sort_values(by='memory', ascending=True, inplace=True)
+```
