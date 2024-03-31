@@ -41,6 +41,8 @@ Add google account
 
 [VSCode](https://code.visualstudio.com)
 
+[Rectangle](https://rectangleapp.com)
+
 - cmd + shift + P, shell, enter(for opening vscode from terminal)
 - Prettier: setting - default formatter - prettier / save - check Format On Save
 
