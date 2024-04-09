@@ -61,3 +61,4 @@ search: true
 | `Zoom-In`             | + (or ctrl + scroll) | + (or cmd + scroll) |
 | `Zoom-Out`            | - (or ctrl + scroll) | - (or cmd + scroll) |
 | `Handle Campus`       | space + drag         | space + drag        |
+| `copy image`          | ctrl + alt + C(V)    | cmd + option + C(V) |
