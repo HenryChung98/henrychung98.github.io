@@ -216,3 +216,67 @@ export default function TemplateContainer() {
 ```
 
 ![des6](/assets/images/2024-04-01-resumeBuilder/des6.png)
+
+##### Learned New
+
+Since each components do not share variables(like useState), all variables should be defined in parent components, so I delete ColorContainer, TemplateContainer components and added those in index file.
+
+And added onClick in Link tag to set selectedTemplate.
+
+```javascript
+const [selectedTemplate, setSelectedTemplate] = useState(0);
+<Link href="/FormPage" style={{ margin: "70px" }} onClick={() => setSelectedTemplate(0)}>
+.
+.
+.
+```
+
+![des7](/assets/images/2024-04-01-resumeBuilder/des7.png)
+
+Also each page does not share variables as well, but I need to export two variables from SelectPage to FormPage, so I used useRouter method to send the variable in url.
+
+```javascript
+import { useRouter } from "next/router";
+
+export default function SelectPage() {
+  const router = useRouter();
+  function handleSubmit(color, template) {
+    router.push(`/form/0?color=${color}&template=${template}`);
+  }
+  .
+  .
+  .
+  <button
+  onClick={(e) => {
+    e.preventDefault();
+    handleSubmit(0, selectedColor);
+  }}>
+    hi
+  </button>
+}
+```
+
+```javascript
+// FormPage
+import { useRouter } from "next/router";
+
+export default function FormPage() {
+  const router = useRouter();
+  const { color, template } = router.query;
+  console.log(`color: ${color}`);
+  console.log(`template: ${template}`);
+  return <></>;
+}
+```
+
+![des8](/assets/images/2024-04-01-resumeBuilder/des8.png)
+
+If there is an section sign in query, need to encode it.
+
+```javascript
+function handleSubmit(template, color) {
+  router.push(`/Form?template=${template}&color=${encodeURIComponent(color)}`);
+}
+```
+
+![des9](/assets/images/2024-04-01-resumeBuilder/des9.png)
