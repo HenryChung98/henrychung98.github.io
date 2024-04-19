@@ -209,3 +209,135 @@ and add className and onBlur to input tag
 ![des3](/assets/images/2024-04-16-resumeBuilder2/des3.png)
 
 It works. Now, need to write all valition functions for each input.
+
+Since there are so many things to check validation, I searched how to optimize it and got like this.
+
+```javascript
+// useState
+  const [validations, setValidations] = useState({
+    firstName: { className: "", message: "" },
+  });
+
+// validate function
+  const validateField = (field, value, regex, errorMessage) => {
+    if (!value.trim() || !regex.test(value.trim())) {
+      setValidations((prevValidations) => ({
+        ...prevValidations,
+        [field]: { className: styles.errors, message: errorMessage },
+      }));
+      return false;
+    }
+    setValidations((prevValidations) => ({
+      ...prevValidations,
+      [field]: { className: "", message: "" },
+    }));
+    return true;
+  };
+
+// check validatoin
+  const validateFirstName = (value) => {
+    return validateField(
+      "firstName",
+      value,
+      /.{3,}/,
+      "First name is too short"
+    );
+  };
+.
+.
+.
+<input
+  name="firstName"
+  onChange={onChange}
+  value={firstName}
+  onBlur={(e) => validateFirstName(e.target.value)}
+  className={validations.firstName.className}
+/>
+.
+.
+ <td className={styles.errors}>{validations.firstName.message}</td>
+```
+
+If there is at least one error, I want to make the Next button not clickable, so need to use useEffect.
+
+```javascript
+const [counter, setCounter] = useState(0);
+
+// prop to send the parent component
+errorCheck(counter);
+
+useEffect(() => {
+  const isAllEmpty = (obj) => {
+    const keys = Object.keys(obj);
+    for (let i = 0; i < keys.length; i++) {
+      const key = keys[i];
+      if (obj.hasOwnProperty(key) && obj[key].message !== "") {
+        return 0;
+      }
+    }
+    return 1;
+  };
+
+  const result = isAllEmpty(validations);
+  setCounter(result);
+}, [validations]);
+```
+
+and error handling in parent component
+
+```javascript
+const [errorCheck, setErrorCheck] = useState(0);
+const handleError = (newCounter) => {
+  setErrorCheck(newCounter);
+  console.log(newCounter);
+};
+
+// handle displayed form
+let currentForm;
+
+function nextForm() {
+  if (errorCheck == 1) {
+    setFormOrder((prevOrder) => (prevOrder < 4 ? prevOrder + 1 : 4));
+  } else {
+    alert("please fill the form and check error");
+  }
+}
+function previousForm() {
+  if (errorCheck == 1) {
+    setFormOrder((prevOrder) => (prevOrder > 0 ? prevOrder - 1 : 0));
+  } else {
+    alert("please fill the form and check error");
+  }
+}
+```
+![des4](/assets/images/2024-04-16-resumeBuilder2/des4.png)
+
+check the date validation is a bit different.
+```javascript
+const [workStartv, setWorkStartv] = useState("");
+  const [workEndv, setWorkEndv] = useState("");
+
+  const handleChangeDate = (e) => {
+    const { name, value } = e.target;
+    if (name === "workStart") {
+      setWorkStartv(value);
+    } else if (name === "workEnd") {
+      setWorkEndv(value);
+    }
+    const startDate = new Date(workStart);
+    const endDate = new Date(workEnd);
+
+    const differenceInMs = endDate - startDate;
+
+    const differenceInDays = differenceInMs / (1000 * 60 * 60 * 24);
+
+    if (differenceInDays < 0) {
+      validations.workDate.className = styles.errors;
+      validations.workDate.message = "Invalid Date";
+    }
+    else{
+      validations.workDate.className = "";
+      validations.workDate.message = "";
+    }
+  };
+```
