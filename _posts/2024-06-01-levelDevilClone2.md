@@ -281,3 +281,54 @@ run()
 ![des3](/assets/images/2024-06-01-levelDevilClone2/des3.png)
 
 ![des4](/assets/images/2024-06-01-levelDevilClone2/des4.png)
+
+
+##### Learned New
+
+I applied physics thing for only jump, but actually I needed to apply gravity. Player need to fall down.
+
+```python
+    def __init__(self, x, y, size):
+        .
+        .
+        .
+        self.gravity = 10
+    
+    def update(self, ground):
+        if self.is_jump == True:
+            if self.v > 0:
+                F = (0.5 * self.m * (self.v * self.v))
+            else:
+                F = -(0.5 * self.m * (self.v * self.v))
+
+            self.pos[1] -= round(F)
+            self.v -= 0.2
+            if self.pos[1] > ground - self.size:
+                self.pos[1] = ground - self.size
+                self.is_jump = False
+                self.v = VELOCITY
+
+        else:
+            self.pos[1] += self.gravity
+            if self.pos[1] >= ground - self.size:
+                self.pos[1] = ground - self.size
+                self.dy = 0
+
+            self.rect.y = self.pos[1]
+```
+
+Now it works.
+
+##### Need to fix
+For now, when player is falling down player can still move to right or left, but if player's x position is equal to wall's x position, player teleports to on the wall. For now, I handled it manually like 
+
+```python
+# 660 = wall[0].w + SCREEN.WIDTH / 4, 690 = wall[1].pos, 370 = wall.h
+if player.pos[0] > 660 and player.pos[0] < 690 and player.pos[1] > 370:
+    player.dx = 0
+```
+
+This code is if player's x position is between wall1's width + screen's width / 4 and wall2's x position which is a hole and player's y position is less than wall's height, you cannot change player's position.
+
+I will fix this part once I figure out how to handle with a function.
+
