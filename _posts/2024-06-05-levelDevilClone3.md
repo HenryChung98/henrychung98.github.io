@@ -7,7 +7,28 @@ author_profile: false
 search: true
 use_math: true
 ---
+#### Go back to Main Menu 
+First, need to make a function in main file to run(). And for some reason, importing main should be in run function. Otherwise, it gives me an error.
 
+```python
+def run():
+    import main
+    back_btn = pygame.image.load("imgs/back.png")
+    back_btn_rect = back_btn.get_rect(center=(32, 32))
+    .
+    .
+    .
+    if event.type == pygame.MOUSEBUTTONDOWN:
+
+        if back_btn_rect.collidepoint(event.pos):
+            running = False
+            main.run()
+    .
+    .
+    .
+    screen.blit(back_btn, back_btn_rect.topleft)
+```
+![des6](/assets/images/2024-06-05-levelDevilClone3/des6.png)
 #### Check Opened Stages
 
 ```python
@@ -98,8 +119,11 @@ Lastly, I added this code to each stage files except first stage so that if this
 ```
 
 ![des1](/assets/images/2024-06-05-levelDevilClone3/des1.png)
+
 ![des2](/assets/images/2024-06-05-levelDevilClone3/des2.png)
+
 ![des3](/assets/images/2024-06-05-levelDevilClone3/des3.png)
+
 ![des4](/assets/images/2024-06-05-levelDevilClone3/des4.png)
 
 
