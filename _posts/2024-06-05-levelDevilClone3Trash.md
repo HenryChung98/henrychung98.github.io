@@ -164,3 +164,27 @@ for wall in walls:
 
 
 ![des5](/assets/images/2024-06-05-levelDevilClone3/des5.png)
+
+
+##### Learned New 2
+
+There was a problem for check opened stages code.
+
+```python
+try:
+    if int(i):
+        check_num.append(i)
+except:
+    continue
+```
+if stage number is 10, 1 is appended to check_num list, but 0 is not since 0 is considered false value. I need to add elif statement to append 0 to the list as well.
+
+```python
+try:
+    if int(i):
+        check_num.append(i)
+    elif i == '0':
+        check_num.append(i)
+except:
+    continue
+```
