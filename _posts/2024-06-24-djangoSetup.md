@@ -20,9 +20,10 @@ Install pyenv, pyenv-virtualenv
 brew install pyenv
 ```
 
-setup pyenv 
+setup pyenv
 
 for bash
+
 ```bash
 echo 'export PYENV_ROOT="$HOME/.pyenv"' >> ~/.profile
 echo 'export PATH="$PYENV_ROOT/bin:$PATH"' >> ~/.profile
@@ -41,6 +42,7 @@ echo 'eval "$(pyenv init -)"' >> ~/.zshrc
 echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 
 ```
+
 ### Windows
 
 Install [VSCode](https://code.visualstudio.com)
@@ -66,7 +68,6 @@ Install WSL - Remote in VSCode
 curl https://pyenv.run | bash
 ```
 
-
 Install pyenv, pyenv-virtualenv
 
 for bash
@@ -79,6 +80,7 @@ export PATH="$PYENV_ROOT/bin:$PATH"
 a \
 ' -e ':a' -e '$!{n;ba};}' ~/.profile
 ```
+
 ```bash
 echo 'eval "$(pyenv init --path)"' >>~/.profile
 
@@ -104,14 +106,14 @@ echo 'eval "$(pyenv virtualenv-init -)"' >> ~/.zshrc
 
 ```
 
-
 ### After
-Install [Python](https://www.python.org)
 
+Install [Python](https://www.python.org)
 
 ```zsh
 pyenv install --list
 ```
+
 and choose a version
 
 ```zsh
@@ -119,20 +121,29 @@ pyenv virtualenv [version] [name]
 ```
 
 Install django
+
 ```zsh
 pip3 install django==[version]
 ```
 
 #### set virtual environmnet
-Move to directory that you want to work and 
+
+Move to directory that you want to work and
 
 ```zsh
 pyenv local [name]
 ```
+
+#### Creating project
+
 ```zsh
 django-admin startproject [project-name]
 ```
+
+##### Run Server
+
 move to 'project-name'
+
 ```zsh
 manage.py runserver
 ```
