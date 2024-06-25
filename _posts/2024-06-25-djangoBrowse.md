@@ -98,3 +98,4 @@ urlpatterns = [
 ```
 
 or create your dafault page.
+
