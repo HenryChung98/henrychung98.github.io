@@ -45,6 +45,9 @@ Add google account
 - Prettier: setting - default formatter - prettier / save - check Format On Save
 - IntelliCode: Autocomplete
 - Blue Thunder theme
+- indent-rainbow
+- vscode-icons
+- Bracket Pair Colorizer (set true)
 
 [Rectangle](https://rectangleapp.com)
 

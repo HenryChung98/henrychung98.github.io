@@ -122,3 +122,17 @@ Install django
 ```zsh
 pip3 install django==[version]
 ```
+
+#### set virtual environmnet
+Move to directory that you want to work and 
+
+```zsh
+pyenv local [name]
+```
+```zsh
+django-admin startproject [project-name]
+```
+move to 'project-name'
+```zsh
+manage.py runserver
+```
