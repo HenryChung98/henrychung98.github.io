@@ -7,6 +7,27 @@ author_profile: false
 search: true
 use_math: true
 ---
+### Template(HTML)
+
+Generally create templates directory in app's directory and create app's directory again in templates directory and create HTML file in that.
+project
+
+└── project
+
+└── app
+
+    └── templates
+
+        └── app   
+
+            └── index.html
+
+```html
+<h2>Hello django</h2>
+<p> hello</p>
+```
+
+After you run the server, you see the index page at 'http://127.0.0.1:8000/app-directory-name/index.
 
 ### Static files
 
@@ -14,7 +35,7 @@ Create static/app-name/ in app's directory and these will manage inside of it(cs
 
 Go to index.html and add
 {% raw %}
-```h
+```html
 {% load static %}
 ```
 
@@ -22,7 +43,7 @@ at very top so that this file is using the static files.
 
 After, to get the files like img or css,
 
-```h
+```html
 <link rel="stylesheet" href={% static 'foods/css/styles.css' %}> <img src={%
 static 'foods/images/chicken.jpg' %}/>
 ```
@@ -31,7 +52,7 @@ static 'foods/images/chicken.jpg' %}/>
 
 #### Parent Template
 
-```h
+```html
 <!-- base.html -->
 {% load static %}
 <!DOCTYPE html>
@@ -46,8 +67,6 @@ static 'foods/images/chicken.jpg' %}/>
     <div>{% endblock date-block %}</div>
     <hr />
 
-    <h1>Restaurant</h1>
-
     <div class="food-container">
       {% block food-container %} {% endblock food-container %}
     </div>
@@ -57,7 +76,7 @@ static 'foods/images/chicken.jpg' %}/>
 
 #### Child Template
 
-```h
+```html
 <!-- index.html -->
 {% extends './base.html' %} {% load static %} {% block date-block%}
 <div>26 June, 2024</div>
@@ -125,7 +144,7 @@ def index(request):
 # urls.py
 urlpatterns = [
     path('index/', views.index),
-    path('menu/<str:food>/', views.food_detail),
+    path('menu/<str:food>/', views.food_detail, name='food-detail'),
 ]
 
 ```
@@ -149,7 +168,7 @@ Now, create detail.html file in templates and
 
 #### Use Static file in Dynamic file
 You need {% get_static_prefix%} to use it
-```h
+```html
 <!-- e.g. -->
 <img src={% get_static_prefix%}{{img}} />
 ```

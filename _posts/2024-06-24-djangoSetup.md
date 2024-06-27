@@ -134,13 +134,27 @@ Move to directory that you want to work and
 pyenv local [name]
 ```
 
-#### Creating project
+### Creating project
 
 ```zsh
 django-admin startproject [project-name]
 ```
 
-##### Run Server
+
+### Creating App
+
+Move to root directory and
+
+```zsh
+python manage.py startapp [app-directory-name]
+```
+
+After, you need to register your app in setting.py.
+
+Go to settings.py file and add 'app-directory-name' in INSTALLED-APPS list.
+
+
+### Run Server
 
 move to 'project-name'
 
