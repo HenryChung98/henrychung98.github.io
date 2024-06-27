@@ -48,12 +48,12 @@ python manage.py shell
 
 Import data table
 ```zsh
-from [project-name].models import Menu
+from [app-name].models import Menu
 ```
 
 Create data
 ```zsh
-Menuobjects.create(name="chicken",
+Menu.objects.create(name="chicken",
 ... description="chicken description",
 ... price=10,
 ... img="foods/images/chicken.jpg")
@@ -66,7 +66,7 @@ Menuobjects.create(name="chicken",
 #### Read
 Import data table
 ```zsh
-from [project-name].models import Menu
+from [app-name].models import Menu
 ```
 
 Read all data in table
@@ -145,3 +145,90 @@ Need to assign data to a variable and delete it.
 data = Menu.objects.get(id=1)
 data.delete()
 ```
+
+#### Code
+```python
+# urls.py
+
+from django.urls import path
+from . import views
+
+urlpatterns = [
+    path('menu/<int:pk>/', views.food_detail),
+    path('menu/', views.index),
+]
+```
+```python
+#views.py
+
+def index(request):
+    today = datetime.today().date()
+    context = dict()
+    context["date"] = today
+    menus = Menu.objects.all()
+    context["menus"] = menus
+    return render(request, 'foods/index.html', context=context)
+
+
+def food_detail(request, pk):
+    context = dict()
+    menu = Menu.objects.get(id=pk)
+    context["menu"] = menu
+
+    return render(request, 'foods/detail.html', context=context)
+```
+
+```python
+#index.py
+{% extends './base.html' %}
+{% load static %}
+
+{% block date-block%}
+<div>{{date}}</div>
+{% endblock date-block%}
+
+{% block food-container%}
+  {% for menu in menus %}
+    <div class="food">
+      <img src={% get_static_prefix %}{{ menu.img }}/>
+      <div class="info">
+        <h3>{{menu.name}}</h3>
+        <P>{{menu.description}}</p>
+        <a href={{menu.id}}>view</a>
+      </div>
+    </div>
+  {% endfor %}
+{% endblock food-container%}
+
+
+```
+
+### Admin tools
+
+First, create an account
+```zsh
+python manage.py createsuperuser
+
+# enter your info
+Username (leave blank to use 'henrychung'): 
+Email address:
+Password:
+Password (again):
+Superuser created successfully.
+```
+
+You can access the administration website via http://127.0.0.1:8000/admin/
+
+You can handle it in admin.py
+```python
+# admin.py
+from django.contrib import admin
+from foods.models import Menu
+# Register your models here.
+
+admin.site.register(Menu)
+```
+
+![des1](/assets/images/2024-06-27-djangoModel/des1.png)
+
+You can do CRUD the database on this page.
