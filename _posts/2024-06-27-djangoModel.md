@@ -178,6 +178,7 @@ def food_detail(request, pk):
     return render(request, 'foods/detail.html', context=context)
 ```
 
+{% raw %}
 ```python
 #index.py
 {% extends './base.html' %}
@@ -199,10 +200,8 @@ def food_detail(request, pk):
     </div>
   {% endfor %}
 {% endblock food-container%}
-
-
 ```
-
+{% endraw %}
 ### Admin tools
 
 First, create an account
