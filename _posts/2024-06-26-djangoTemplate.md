@@ -22,7 +22,7 @@ at very top so that this file is using the static files.
 
 After, to get the files like img or css,
 
-```html
+```h
 <link rel="stylesheet" href={% static 'foods/css/styles.css' %}> <img src={%
 static 'foods/images/chicken.jpg' %}/>
 ```
@@ -31,7 +31,7 @@ static 'foods/images/chicken.jpg' %}/>
 
 #### Parent Template
 
-```html
+```h
 <!-- base.html -->
 {% load static %}
 <!DOCTYPE html>
@@ -57,7 +57,7 @@ static 'foods/images/chicken.jpg' %}/>
 
 #### Child Template
 
-```html
+```h
 <!-- index.html -->
 {% extends './base.html' %} {% load static %} {% block date-block%}
 <div>26 June, 2024</div>
@@ -149,7 +149,7 @@ Now, create detail.html file in templates and
 
 #### Use Static file in Dynamic file
 You need {% get_static_prefix%} to use it
-```html
+```h
 <!-- e.g. -->
 <img src={% get_static_prefix%}{{img}} />
 ```
