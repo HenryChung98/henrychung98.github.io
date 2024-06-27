@@ -1,6 +1,6 @@
 ---
 layout: single
-title: "Django things"
+title: "Django Structure"
 categories: note
 tags: [django]
 author_profile: false
@@ -68,7 +68,22 @@ urlpatterns = [
 from django.http import HttpResponse
 
 def index(request):
-    return HttpResponse("<h2>Hello django</h2>")
+    return render(request, 'foods/index.html')
+```
+
+##### Template(HTML)
+
+Generally create templates directory in app's directory and create app's directory again in templates directory and create HTML file in that.
+project
+└── project
+└── app
+    └── templates
+        └── app   <!-- django directory structure -->
+            └── index.html
+
+```html
+<h2>Hello django</h2>
+<p> hello</p>
 ```
 
 After you run the server, you see the index page at 'http://127.0.0.1:8000/app-directory-name/index
@@ -98,4 +113,5 @@ urlpatterns = [
 ```
 
 or create your dafault page.
+
 
