@@ -14,7 +14,7 @@ Create static/app-name/ in app's directory and these will manage inside of it(cs
 
 Go to index.html and add
 
-```html
+```h
 {% load static %}
 ```
 
