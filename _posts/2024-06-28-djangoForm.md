@@ -229,7 +229,7 @@ path('posts/new', views.post_create, name='post-create')
 
 from django.views.generic import CreateView
 
-class PostCreateView(View):
+class PostCreateView(CreateView):
     model = Post
     form_class = PostForm
     template_name = 'posts/post_form.html'

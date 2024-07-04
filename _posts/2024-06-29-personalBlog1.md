@@ -245,7 +245,7 @@ And modify html
   {% endfor%}
 {% else %}
 <div class="blank">
-  <p>No Content Created</p>
+  <p>No Content</p>
 </div>
 ```
 
@@ -334,4 +334,34 @@ On postList page, I want to make when title is clicked, move to the content of t
 
 ![des8](/assets/images/2024-06-29-personalBlog1/des8.png)
 
+
+
+##### Learned New
+
+You can change postList, postDetail function to a class using generic view method.
+
+```python 
+from django.views.generic import ListView, DetailView
+class PostListView(ListView):
+    model = Post # create a new 'Post' object based on 'Post'
+    template_name = 'posts/postList.html' # render assgined template
+    context_object_name = 'posts' # context
+    ordering = ['-createdAt'] # ascending order
+
+class PostDetailView(DetailView):
+    model = Post # create a new 'Post' object based on 'Post'
+    template_name = 'posts/postDetail.html' # render assgined template
+    pk_url_kwarg = 'postId' # keyword argument
+    context_object_name = 'post' # context
+```
+and change url.py.
+```python
+urlpatterns = [
+    path('', views.index, name='index'),
+    path('posts/', views.PostListView.as_view(), name='post-list'),
+    path('posts/<int:postId>/', views.PostDetailView.as_view(), name='post-detail'),
+]
+```
+
+These work totally same as the previous one.
 {% endraw %}
