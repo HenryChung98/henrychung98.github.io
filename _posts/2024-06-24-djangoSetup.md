@@ -117,7 +117,7 @@ pyenv install --list
 and choose a version
 
 ```zsh
-pyenv virtualenv [version] [name]
+pyenv virtualenv [version] [django_[name]_env]
 ```
 
 Install django

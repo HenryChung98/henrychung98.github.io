@@ -347,6 +347,12 @@ class PostListView(ListView):
     template_name = 'posts/postList.html' # render assgined template
     context_object_name = 'posts' # context
     ordering = ['-createdAt'] # ascending order
+    
+    # to get today's date
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['today'] = date.today()
+        return context
 
 class PostDetailView(DetailView):
     model = Post # create a new 'Post' object based on 'Post'
