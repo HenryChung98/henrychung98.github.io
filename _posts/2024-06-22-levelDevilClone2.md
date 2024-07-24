@@ -2,7 +2,7 @@
 layout: single
 title: "Clone Level Devil_Events"
 categories: project
-tags: [clone-game]
+tags: [clone-game, unity]
 author_profile: false
 search: true
 use_math: true
@@ -12,7 +12,7 @@ use_math: true
 
 Spawner class
 
-```C#
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -49,7 +49,7 @@ if waitSeconds is not 0, Spawn object after n seconds.
 
 else, spawn object once is called.
 
-```C#
+```csharp
 void Start()
 {
         if (spawnPosX.Length != spawnPosY.Length)
@@ -62,7 +62,7 @@ void Start()
 
 If length of spawnPosX and Y are different, notify it and return nothing.
 
-```C#
+```csharp
 private IEnumerator spawn(float interval){
     for (int i = 0; i < spawnPosX.Length; i++){
         Vector2 spawnPos = new Vector2(spawnPosX[i], spawnPosY[i]);
@@ -75,7 +75,7 @@ private IEnumerator spawn(float interval){
 
 Spawn objects on depending on the length of spawnPosX and Y.
 
-```C#
+```csharp
     if (isDestruct)
     {
         foreach (GameObject spawnedObj in spawnedObjs)
@@ -92,7 +92,7 @@ Destroy spawned objects if isDestruct is true.
 
 Pretty same except there is await for n seconds.
 
-```C#
+```csharp
     private IEnumerator awaitSeconds(float second, float interval){
         yield return new WaitForSeconds(second);
         for (int i = 0; i < spawnPosX.Length; i++){
@@ -119,7 +119,7 @@ Pretty same except there is await for n seconds.
 
 ### Sizing
 
-```C#
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -149,7 +149,7 @@ public class Sizing : MonoBehaviour
     .
 ```
 
-```C#
+```csharp
 // If it is close enough to the target scale, set the target scale to zero so that it does not continue to convert.
 
         if (Mathf.Abs(newScaleX - targetScaleX) < 0.01f)

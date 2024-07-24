@@ -2,7 +2,7 @@
 layout: single
 title: "Clone Level Devil_Unlock Stages"
 categories: project
-tags: [clone-game]
+tags: [clone-game, unity]
 author_profile: false
 search: true
 use_math: true
@@ -12,11 +12,11 @@ I made an algorithm to check opened stages before.
 
 [Algorithm](https://henrychung98.github.io/project/levelDevilClone3Trash/#check-opened-stages)
 
-I just converted to C# code with ChatGPT and fixed some issues.
+I just converted to csharp code with ChatGPT and fixed some issues.
 
 File stream
 
-```C#
+```csharp
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -116,7 +116,7 @@ public class FileStream : MonoBehaviour
 
 Stage Button
 
-```C#
+```csharp
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;

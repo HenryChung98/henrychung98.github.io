@@ -2,7 +2,7 @@
 layout: single
 title: "Clone Level Devil_Setting"
 categories: project
-tags: [clone-game]
+tags: [clone-game, unity]
 author_profile: false
 search: true
 use_math: true
@@ -27,7 +27,7 @@ Also need Rigidbody 2D with freeze rotation z and Box Collider 2D.
 #### Move
 You can simply handle horizontal move.
 
-```C#
+```csharp
 [SerializeField] private float moveSpeed = 3f;
 void Update{
     float horizontalInput = Input.GetAxisRaw("Horizontal");
@@ -36,7 +36,7 @@ void Update{
 
 I got two sprites for player and it's facing depends on user input. When going right side, facing right and going left, facing left. 
 
-```C#
+```csharp
 [SerializeField] private Sprite facingRight;
 [SerializeField] private Sprite facingLeft;
 private SpriteRenderer spriteRenderer;
@@ -60,7 +60,7 @@ void Update{
 
 And player should not be out of the screen.
 
-```C#
+```csharp
 if (transform.position.x <= -8.7f){
     transform.position = new Vector2(-8.7f, transform.position.y);
 }
@@ -78,7 +78,7 @@ if (transform.position.y >= 4.8f){
 ```
 
 I gave gravity scale 4 to the player object, and when it falls down, the velocity increases so I want to set the max fall speed.
-```C#
+```csharp
 [SerializeField] private float maxFallSpeed = -2f;
 .
 .
@@ -90,7 +90,7 @@ if (rb.velocity.y < maxFallSpeed)
 ```
 #### Jump
 
-```C#
+```csharp
 [SerializeField] private float jumpForce = 5f;
 
 private void Jump(){
@@ -103,7 +103,7 @@ This code can simply make player jump, but it will be able to jump infinitly. Ne
 
 First, need to add Empty object to Player object to check isGrounded at Hierarchy and need Ground object with layer named Ground. I added Ground object at the top of the wall. 
 
-```C#
+```csharp
 public Transform groundCheck;
 public LayerMask groundLayer;
 private bool isGrounded;
@@ -123,7 +123,7 @@ This method is used in Unity to detect all colliders that collide with the capsu
 
 I created empty string with Deat tag, and Box Collider checked isTrigger. 
 
-```C#
+```csharp
 private void OnTriggerEnter2D(Collider2D other){
     
     if (other.gameObject.CompareTag("Dead")){
@@ -137,7 +137,7 @@ When player collides with Dead, it will just destroy so I want to make simple an
 
 I want to create 4 particles and spread it in 4 directions.
 
-```C#
+```csharp
 public class Particle : MonoBehaviour
 {
     [SerializeField] private float speed = 3f;
@@ -167,7 +167,7 @@ public class Particle : MonoBehaviour
 The particle is moving depends on the direction and destoryed in 1 second. Now I'll handle the particle in player class.
 
 Create a function that create particle.
-```C#
+```csharp
 [HideInInspector] public bool isDead;
 [SerializeField] private GameObject particle;
 
@@ -183,7 +183,7 @@ private void CreateParticle(int direction){
 
 and call 4 times in dead.
 
-```C#
+```csharp
 CreateParticle(0); 
 CreateParticle(1); 
 CreateParticle(2);
@@ -204,7 +204,7 @@ EventHandler class passes values that need to move wall, and MoveObject class ma
 
 
 EventHandler class
-```C#
+```csharp
 [SerializeField] private GameObject pObj;
 [SerializeField] private bool moving;
 
@@ -241,7 +241,7 @@ private void OnTriggerEnter2D(Collider2D other){
 ```
 
 MoveObject class
-```C#
+```csharp
 public bool moveLeft;
 public bool moveRight;
 public bool moveUp;
@@ -286,7 +286,7 @@ When player is attached a door, considered stage is cleared and move to next sta
 
 In player class simply pass boolean value
 
-```C#
+```csharp
 if (other.gameObject.CompareTag("Door")){
     clearStage = true;
     gameObject.SetActive(false);
@@ -295,7 +295,7 @@ if (other.gameObject.CompareTag("Door")){
 
 and GameManager class get this value
 
-```C#
+```csharp
 using UnityEngine.SceneManagement; // need this for handling scene
 
 public Player playerVar;
@@ -321,7 +321,7 @@ Since there is short animation for screen transition, I made the function with a
 ### Audio
 Before code, add an audio source in inspector window.
 
-```C#
+```csharp
 [SerializeField] private AudioClip[] audioClips; // if more than two audio sources
 private AudioSource audioSource;
 
