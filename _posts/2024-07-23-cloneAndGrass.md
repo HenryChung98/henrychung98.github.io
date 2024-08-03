@@ -2,7 +2,7 @@
 layout: single
 title: "Planting Grass after Clone"
 categories: project
-tags: [django]
+tags: [github]
 author_profile: false
 search: true
 use_math: true
