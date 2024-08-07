@@ -20,4 +20,5 @@ search: true
 | **Copy Line**               | alt + shift + arrow key    | option + shift + arrow key   |
 | **Setting**                 | ctrl + ,                   | cmd + ,                      |
 | **Align**                   | shift + tab                | shift + tab                  |
+| **Delete a line**           | ctrl + shift + K           | cmd + shift + K              |
 | **Show All Symbols**        | ctrl + T                   | cmd + T                      |
