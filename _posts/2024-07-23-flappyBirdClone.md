@@ -8,14 +8,9 @@ search: true
 use_math: true
 ---
 
-### Programming languages / engine used
+### Background
 
-- C#
-- Unity
-
-### Background Move
-
-I got two same background components, and they move right to left. When the backgrounds pass certain position, move back to right.
+Rendered two background prefabs and they move to left. When background posX reach to out of the frame, reset posX
 
 ```csharp
 public class Background : MonoBehaviour
@@ -24,9 +19,9 @@ public class Background : MonoBehaviour
 
     void Update()
     {
-         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-        if (transform.position.x < 0.6f){
-            transform.position = new Vector3(24.45f, -1.8f, 0);
+        transform.position += Vector3.left * moveSpeed * Time.deltaTime;
+        if (transform.position.x < -2.3f){
+            transform.position = new Vector3(20.5f, 1.9f, 0);
             }
     }
 }
@@ -36,7 +31,7 @@ public class Background : MonoBehaviour
 
 #### Jump
 
-Player is simply when clicked, it jumps. Unity offers physics thing, so I just need to add Rigidbody 2D to player component and set.
+Player simply jumps when clicked. Unity provides physics features, so I just need to add a Rigidbody 2D component to the player and configure it.
 
 ```csharp
 public class Player : MonoBehaviour
@@ -66,7 +61,7 @@ public class Player : MonoBehaviour
 
 #### Collision
 
-When player goes to out of the screen or collide pipe, it dies. Write code for triggerEnter that if it collides an object which has tag 'Dead', destroyed.
+When the player goes off the screen or collides with a pipe, it dies.OnTriggerEnter destroys the player if it collides with an object tagged 'Dead'.
 
 ```csharp
 private void OnTriggerEnter2D(Collider2D other){
@@ -77,26 +72,16 @@ private void OnTriggerEnter2D(Collider2D other){
     }
 ```
 
-And I added two empty object which has collider and 'Dead' tag and place at the top and bottom of the screen.
+### Pipe Spawner
 
-### Pipe
-
-#### Spawn
-
-Now need to handle pipe. There are two pipes and there is an empty objects which has 'Score' tag so when player pass between two pipes, user get a score.
-
-![des1](/assets/images/2024-07-23-flappyBirdClone/des1.png)
-
-And add edge collider for pipes and 'Dead' tag as well.
-
-After, I added spawner to spawn pipes, and pipes will be spawned at random Y position at every 3 seconds.
+Created a spawner that spawns a pipe at a random Y position within the frame
 
 ```csharp
 public class Spawner : MonoBehaviour
 {
     [SerializeField] private GameObject pipes;
-    private float maxY = 3.3f;
-    private float minY = -0.8f;
+    private float maxY = 2.8f;
+    private float minY = -2.6f;
 
     void Start()
     {
@@ -114,132 +99,145 @@ public class Spawner : MonoBehaviour
 }
 ```
 
-#### Move
+### Pipe
 
-And pipe should move to left. Pretty same idea as background, but it should be destory if it goes to out of the screen. Otherwise, memory leak is occured.
+The pipe itself gets destroyed when its posX moves outside the frame.
 
 ```csharp
 public class Pipe : MonoBehaviour
 {
-    [SerializeField] private float moveSpeed = 5f;
+    [SerializeField] private float moveSpeed = 1f;
     void Update()
     {
         transform.position += Vector3.left * moveSpeed * Time.deltaTime;
-        if (transform.position.x < -7.5f){
+        if (transform.position.x < -4.5f){
             Destroy(gameObject);
         }
     }
 }
 ```
 
-### Score
+And there is an empty objects which has 'Score' tag between pipes so when player pass between two pipes, user get a score.
 
-First I created GameManager script and I will handle score in this script.
+![des1](/assets/images/2024-07-23-flappyBirdClone/des1.png)
+
+### Game Manager
+
+#### Scene Load
+
+Scene Load functions(main menu scene, game playing scene(restart))
 
 ```csharp
-using TMPro; // to handle text
+    public void Restart(){
+        SceneManager.LoadScene("GameScene");
+    }
 
-public class GameManager : MonoBehaviour
-{
-    public int score;
-    public TextMeshProUGUI scoreText;
-    public static GameManager instance;
-    void Awake()
-        {
-            if (instance == null)
-            {
-                instance = this;
-                
-            }
-        }
-    void Start()
-    {
-        score = 0;
+    public void BackMainMenu(){
+        SceneManager.LoadScene("MainScene");
     }
-    void Update()
-    {
-        scoreText.text = score.ToString();
-    }
-    public void AddScore()
-    {
-        score++;
-
-    }
-}
 ```
 
-And created Score script to check whether player pass between the pipes.
+Get best score from unity local storage when start.
+
+```csharp
+void Start()
+    {
+        // reset
+        score = 0;
+        if (scoreText != null){
+            scoreText.gameObject.SetActive(true);
+        }
+
+        // get value of best score from unity local storage, if null, set to 0
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
+    }
+```
+
+Declare a toggle function which switches isPaused boolean variable, and this variable is checked in update function.
+
+```csharp
+    public void TogglePause()
+    {
+        isPaused = !isPaused;
+        pausePanel.gameObject.SetActive(isPaused);
+    }
+```
+
+In Update function, check isPaused, is Player dead, and convert score text to string.
 
 ```csharp
 public class Score : MonoBehaviour
 {
     void Update()
     {
+        scoreText.text = score.ToString();
 
-    }
+        Time.timeScale = isPaused ? 0 : 1;
 
-    private void OnTriggerEnter2D(Collider2D other){
-
-        if (other.gameObject.CompareTag("Player")){
-            GameManager.instance.AddScore();
+        if (!player){
+            GameOver();
         }
     }
 }
 ```
 
-![des2](/assets/images/2024-07-23-flappyBirdClone/des2.png)
-
-### Main Scene
-
-I wanted to make a button to start the game.
-
-Create a MainScene roughly with start button and when the button clicked, game is started. Code is really short.
+This function is called when player pass between the pipes.
 
 ```csharp
-using UnityEngine.SceneManagement; // need this to handle scene
-
-public class SceneLoader : MonoBehaviour
-{
-public void LoadGameScene()
+public void AddScore()
     {
-        SceneManager.LoadScene("GameScene");
+        score++;
     }
-}
 ```
 
-![des4](/assets/images/2024-07-23-flappyBirdClone/des4.png)
-
-### Game Over
-
-I created panel, score, best score and button and combine in a empty object named GameOver. This was deactivated and when player dies, it wil be activated and when button is clicked, load the gamescene so that you can re-start it.
-
-![des3](/assets/images/2024-07-23-flappyBirdClone/des3.png)
-
-##### Learned New
-
-I found that 'PlayerPrefs' which is database offered by Unity so you can save data permanently.
-
-I will handle best score with this method.
+When gameover, check is current score greater than best score, and if yes, update it.
 
 ```csharp
-void Start()
-{
-    // read best score from database, 0 is default value
-    bestScore = PlayerPrefs.GetInt("BestScore", 0);
-}
-.
-.
-.
-// set best score
-if (score > bestScore){
-    bestScore = score;
-    PlayerPrefs.SetInt("BestScore", bestScore);
-}
-bestScoreText.text = "Best Score: " + bestScore.ToString();
-.
-.
-// this will be executed when user quit the game
-void OnApplicationQuit(){
-    PlayerPrefs.SetInt("BestScore", bestScore);
-}
+ private void GameOver(){
+        scoreText.gameObject.SetActive(false);
+        endScoreText.text = score.ToString();
+        if (score > bestScore){
+            bestScore = score;
+            newRecord.gameObject.SetActive(true);
+            PlayerPrefs.SetInt("BestScore", bestScore);
+        }
+        bestScoreText.text = bestScore.ToString();
+
+        // hide pause button
+        PauseBtn.gameObject.SetActive(false);
+        // show game over panel
+        panel.SetActive(true);
+
+```
+
+Four different medals are displayed depending on the score.
+
+```csharp
+        if (score >= 40){
+            Medal.sprite = platinum;
+        }
+        else if (score >= 30){
+            Medal.sprite = gold;
+        }
+         else if (score >= 20){
+            Medal.sprite = silver;
+        }
+         else if (score >= 10){
+            Medal.sprite = bronze;
+        }
+        else{
+            // if score is less than 10, no medal
+            Medal.gameObject.SetActive(false);
+            Medal.sprite = null;
+        }
+    }
+```
+
+Before the application quits, save best score on local storage
+
+```csharp
+    void OnApplicationQuit()
+    {
+        PlayerPrefs.SetInt("BestScore", bestScore);
+    }
 ```

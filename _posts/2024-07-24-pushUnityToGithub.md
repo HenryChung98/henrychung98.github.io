@@ -2,7 +2,7 @@
 layout: single
 title: "How To Push Unity Project To Github"
 categories: note
-tags: [Unity]
+tags: [unity]
 author_profile: false
 search: true
 use_math: true
