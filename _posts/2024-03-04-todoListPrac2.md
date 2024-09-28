@@ -7,6 +7,10 @@ author_profile: false
 search: true
 ---
 
+[To Do List Practice_1](https://henrychung98.github.io/project/todoListPrac1/)
+[To Do List Practice_3](https://henrychung98.github.io/project/todoListPrac3/)
+[To Do List Practice_4](https://henrychung98.github.io/project/todoListPrac4/)
+
 #### save as csv
 
 If I refresh, or re open it, the contents is gone. I want to save it with using csv.

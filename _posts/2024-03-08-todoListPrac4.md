@@ -7,6 +7,10 @@ author_profile: false
 search: true
 ---
 
+[To Do List Practice_1](https://henrychung98.github.io/project/todoListPrac1/)
+[To Do List Practice_2](https://henrychung98.github.io/project/todoListPrac2/)
+[To Do List Practice_3](https://henrychung98.github.io/project/todoListPrac3/)
+
 ##### Learned New
 
 First, if I code selectedDate.getDate() === item.date.getDate(), there is an issue since all months share the same date. Assume I saved data for March 1st; then, the data will be shown for April 1st, May 1st, and so on. So, I modified it to formattingDate(selectedDate) === formattingDate(item.date).

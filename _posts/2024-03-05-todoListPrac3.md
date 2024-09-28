@@ -7,6 +7,10 @@ author_profile: false
 search: true
 ---
 
+[To Do List Practice_1](https://henrychung98.github.io/project/todoListPrac1/)
+[To Do List Practice_2](https://henrychung98.github.io/project/todoListPrac2/)
+[To Do List Practice_4](https://henrychung98.github.io/project/todoListPrac4/)
+
 #### calendar class
 
 I will add small calendar to save todo list by date. I created new file to contain calendar class. I got a calendar class from ChatGPT, and modified serveral parts that doesn't work since ChatGPT 3.5 cannot write perfect code.

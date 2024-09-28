@@ -9,12 +9,9 @@ search: true
 
 [my github repo](https://github.com/HenryChung98/to-do-list-practice)
 
-### Programming languages used
-
-- html
-- css
-- typeScript
-
+[To Do List Practice_2](https://henrychung98.github.io/project/todoListPrac2/)
+[To Do List Practice_3](https://henrychung98.github.io/project/todoListPrac3/)
+[To Do List Practice_4](https://henrychung98.github.io/project/todoListPrac4/)
 ### Introduction
 
 This project is for practicing TypeScript.
