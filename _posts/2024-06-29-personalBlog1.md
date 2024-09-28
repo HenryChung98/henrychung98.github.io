@@ -8,9 +8,8 @@ search: true
 use_math: true
 ---
 
-### Programming languages used
-
-- django
+[Personal Blog Project_2](https://henrychung98.github.io/project/personalBlog2/)
+[Personal Blog Project_3](https://henrychung98.github.io/project/personalBlog3/)
 
 ### Setup
 

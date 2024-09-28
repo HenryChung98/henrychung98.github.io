@@ -8,6 +8,9 @@ search: true
 use_math: true
 ---
 
+[Personal Blog Project_1](https://henrychung98.github.io/project/personalBlog1/)
+[Personal Blog Project_2](https://henrychung98.github.io/project/personalBlog2/)
+
 ### Validator
 
 #### Use Internal django Validator
