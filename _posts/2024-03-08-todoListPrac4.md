@@ -97,3 +97,4 @@ function loadFromLocalStorage() {
 ![des4](/assets/images/2024-03-08-todoListPrac4/des4.png)
 
 Almost everything works properly, now I just need to add 'localStorage.setItem("dbList", JSON.stringify(dbList));' this line to event listener of removeBtn, checkBox so that data in dbList will be set correctly.
+
