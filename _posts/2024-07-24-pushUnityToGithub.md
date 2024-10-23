@@ -22,8 +22,9 @@ use_math: true
 3. You will see warning message if you have never pushed it. Click 'create a repository' and set Git ignore to Unity. This make pushing and pulling a bit more efficient. And click Create repository.
 
 ![des3](/assets/images/2024-07-24-pushUnityToGithub/des3.png)
+4. Drop down 
 
-4. Click Publish repository and it will be successfully pushed.
+5. Click Publish repository and it will be successfully pushed.
 
 ![des4](/assets/images/2024-07-24-pushUnityToGithub/des4.png)
 
