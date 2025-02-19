@@ -33,6 +33,7 @@ git lfs track "*.mp4"
 git add .gitattributes
 git add .
 git commit -m "Set up Git LFS for Unreal Engine"
+git lfs push --all origin main
 git push origin main 
 ```
 
