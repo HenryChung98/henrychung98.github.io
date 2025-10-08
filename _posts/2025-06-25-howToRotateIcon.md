@@ -28,11 +28,12 @@ function RotatingIcon() {
   return (
     <div className="flex items-center md:w-1/2 p-3">
       <img
-        src={iconPath}
-        alt={iconAlt}
+        src=""
+        alt=""
         onMouseEnter={handleMouseEnter}
         className={`w-1/3 ${hoverClass} hover:drop-shadow-lg transition-transform duration-300`}
       />
     </div>
   );
 }
+```
